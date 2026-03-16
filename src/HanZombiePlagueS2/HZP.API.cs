@@ -241,10 +241,9 @@ public partial class HanZombiePlagueAPI : IHanZombiePlagueAPI, IDisposable
             maxHealth = CFG.HumanMaxHealth;
         }
 
-        string Default = "characters/models/ctm_st6/ctm_st6_variante.vmdl";
-        string Custom = string.IsNullOrEmpty(CFG.HumandefaultModel) ? Default : CFG.HumandefaultModel;
+        string modelPath = _helpers.GetHumanModelPathForPlayer(target, CFG);
 
-        _helpers.TVaccine(target, maxHealth, CFG.HumanInitialSpeed, Custom, CFG.TVaccineSound, 1.0f);
+        _helpers.TVaccine(target, maxHealth, CFG.HumanInitialSpeed, modelPath, CFG.TVaccineSound, 1.0f);
     }
 
     public void HZP_SetTargetSniper(IPlayer target)

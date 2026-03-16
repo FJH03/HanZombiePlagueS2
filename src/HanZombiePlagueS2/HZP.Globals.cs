@@ -27,6 +27,7 @@ public class HZPGlobals
     public Dictionary<int, bool> IsNemesis = new Dictionary<int, bool>();
     public Dictionary<int, bool> IsAssassin = new Dictionary<int, bool>();
     public Dictionary<int, bool> IsHero = new Dictionary<int, bool>();
+    public Dictionary<int, string> PendingZombieRespawnClass = new Dictionary<int, string>();
 
     public CancellationTokenSource? g_hRoundEndTimer { get; set; } = null;
     public CancellationTokenSource? g_hCountdown { get; set; } = null;

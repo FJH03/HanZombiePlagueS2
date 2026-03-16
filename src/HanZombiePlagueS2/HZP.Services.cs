@@ -270,16 +270,12 @@ public partial class HZPServices
 
         _globals.IsZombie[Id] = false;
         player.SwitchTeam(Team.CT);
-        _helpers.ChangeKnife(player, false, false);
+        _helpers.RestoreHumanKnife(player);
         _helpers.SetFov(player, 90);
         _helpers.ClearPlayerBurn(Id);
         _helpers.ClearFreezeStaten(player);
 
-
-        string Default = "characters/models/ctm_st6/ctm_st6_variante.vmdl";
-        string Custom = string.IsNullOrEmpty(CFG.HumandefaultModel) ? Default : CFG.HumandefaultModel;
-
-        pawn.SetModel(Custom);
+        _helpers.ApplyHumanModel(player, CFG);
 
         var maxHealth = CFG.HumanMaxHealth;
         pawn.MaxHealth = maxHealth;
@@ -365,6 +361,7 @@ public partial class HZPServices
             _helpers.RemoveInfiniteAmmo(zombie);
             
             _globals.IsZombie[Id] = true;
+            _globals.PendingZombieRespawnClass.Remove(Id);
             zombie.SwitchTeam(Team.T);
 
             _helpers.ShakeZombie(zombie);

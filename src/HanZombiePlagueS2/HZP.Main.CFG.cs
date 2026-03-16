@@ -94,6 +94,14 @@ public class HeroConfig : GameModeConfig
     public string ModelsPath { get; set; } = string.Empty;
 
 }
+
+public class HumanModelConfig
+{
+    public string Name { get; set; } = string.Empty;
+    public bool Enable { get; set; } = true;
+    public string ModelPath { get; set; } = string.Empty;
+}
+
 public class HZPMainCFG
 {
     public float RoundReadyTime { get; set; } = 25f;
@@ -111,6 +119,8 @@ public class HZPMainCFG
     public HeroConfig Hero { get; set; } = new();
 
     public string HumandefaultModel { get; set; } = string.Empty;
+    public string HumanModelMenuCommand { get; set; } = "sw_hmodel";
+    public List<HumanModelConfig> HumanModelList { get; set; } = new();
     public int HumanMaxHealth { get; set; } = 225;
     public bool EnableDamageHud { get; set; } = true;
     public float HumanInitialSpeed { get; set; } = 1.0f;

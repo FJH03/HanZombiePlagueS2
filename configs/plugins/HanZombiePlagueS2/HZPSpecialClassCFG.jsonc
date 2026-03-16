@@ -21,7 +21,7 @@
 			},
 			"Models": 
 			{
-			  "ModelPath": "characters/models/basebuilder/zombie_gravity/zombie_gravity.vmdl",
+			  "ModelPath": "characters/models/hoshistar/zombiezeta/normalhost/normalhost.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 
@@ -40,16 +40,16 @@
 			}
 		},
 		{
-			"Name": "复仇之神",
+			"Name": "重装僵尸",
 			"Enable": true,
 			"PrecacheSoundEvent": "soundevents/hanzombieplagueplayers.vsndevts",
 			"Stats": 
 			{
 			  "Health": 30000,
 			  "MotherZombieHealth": 50000,
-			  "Speed": 2.0,
+			  "Speed": 0.8,
 			  "Damage": 150.0,
-			  "Gravity": 0.3,
+			  "Gravity": 1.0,
 			  "Fov": 120,
 			  "EnableRegen": true,
 			  "HpRegenSec": 1.0,
@@ -59,7 +59,7 @@
 			},
 			"Models": 
 			{
-			  "ModelPath": "characters/models/hmn_sk2/zombie/hl2_zombie/hl2_zombie_sk2model.vmdl",
+			  "ModelPath": "characters/models/hoshistar/zombiezeta/mutation_heavy/mutation_heavy.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 

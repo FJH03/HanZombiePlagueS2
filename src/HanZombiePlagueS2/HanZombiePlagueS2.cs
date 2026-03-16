@@ -80,6 +80,7 @@ public partial class HanZombiePlagueS2(ISwiftlyCore core) : BasePlugin(core)
         collection.AddSingleton<PlayerZombieState>();
         collection.AddSingleton<HZPMenuHelper>();
         collection.AddSingleton<HZPZombieClassMenu>();
+        collection.AddSingleton<HZPHumanModelMenu>();
         collection.AddSingleton<HZPAdminItemMenu>();
         collection.AddSingleton<HZPGameMode>();
 

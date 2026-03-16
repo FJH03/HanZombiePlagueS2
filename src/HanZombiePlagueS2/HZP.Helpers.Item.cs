@@ -44,7 +44,7 @@ public partial class HZPHelpers
 
         _globals.IsZombie[Id] = false;
         player.SwitchTeam(Team.CT);
-        ChangeKnife(player, false, false);
+        RestoreHumanKnife(player);
         SetFov(player, 90);
         ClearPlayerBurn(Id);
 

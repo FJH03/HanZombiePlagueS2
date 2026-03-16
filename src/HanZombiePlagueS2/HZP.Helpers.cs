@@ -27,13 +27,15 @@ public partial class HZPHelpers
     private readonly ILogger<HZPHelpers> _logger;
     private readonly ISwiftlyCore _core;
     private readonly HZPGlobals _globals;
+    private readonly PlayerZombieState _zombieState;
 
     public HZPHelpers(ISwiftlyCore core, ILogger<HZPHelpers> logger,
-        HZPGlobals globals)
+        HZPGlobals globals, PlayerZombieState zombieState)
     {
         _core = core;
         _logger = logger;
         _globals = globals;
+        _zombieState = zombieState;
     }
 
     public int? ServerPlayerCount()
@@ -295,6 +297,157 @@ public partial class HZPHelpers
             weapon.AttributeManager.Item.ItemDefinitionIndex = 42;
         }
 
+    }
+
+    public void RestoreHumanKnife(IPlayer player)
+    {
+        if (player == null || !player.IsValid)
+            return;
+
+        var pawn = player.PlayerPawn;
+        if (pawn == null || !pawn.IsValid)
+            return;
+
+        var controller = player.Controller;
+        if (controller == null || !controller.IsValid)
+            return;
+
+        if (controller.LifeState != (byte)LifeState_t.LIFE_ALIVE)
+            return;
+
+        var ws = pawn.WeaponServices;
+        if (ws == null || !ws.IsValid)
+            return;
+
+        ws.DropWeaponBySlot(gear_slot_t.GEAR_SLOT_KNIFE);
+
+        var itemServices = pawn.ItemServices;
+        if (itemServices == null || !itemServices.IsValid)
+            return;
+
+        itemServices.GiveItem<CCSWeaponBase>("weapon_knife");
+    }
+
+    public List<HumanModelConfig> GetEnabledHumanModels(HZPMainCFG cfg)
+    {
+        return cfg.HumanModelList
+            .Where(model => model.Enable && !string.IsNullOrWhiteSpace(model.ModelPath))
+            .ToList();
+    }
+
+    public string GetDefaultHumanModelPath(HZPMainCFG cfg)
+    {
+        const string defaultModel = "characters/models/ctm_st6/ctm_st6_variante.vmdl";
+        return string.IsNullOrWhiteSpace(cfg.HumandefaultModel) ? defaultModel : cfg.HumandefaultModel;
+    }
+
+    public string GetHumanModelPathForPlayer(IPlayer player, HZPMainCFG cfg)
+    {
+        var defaultModel = GetDefaultHumanModelPath(cfg);
+        var availableModels = GetEnabledHumanModels(cfg);
+
+        if (player == null || !player.IsValid)
+            return defaultModel;
+
+        if (player.IsFakeClient)
+        {
+            var assignedModelName = _zombieState.GetLocalHumanModelPreference(player.PlayerID);
+            var assignedModel = availableModels.FirstOrDefault(model => model.Name == assignedModelName);
+            if (assignedModel != null)
+                return assignedModel.ModelPath;
+
+            var randomModel = _zombieState.PickRandomHumanModel(availableModels);
+            if (randomModel != null)
+            {
+                _zombieState.SetLocalHumanModelPreference(player.PlayerID, randomModel.Name);
+                return randomModel.ModelPath;
+            }
+
+            return defaultModel;
+        }
+
+        var preferredModelName = _zombieState.GetPlayerHumanModelPreference(player.PlayerID, player.SteamID);
+        if (string.IsNullOrWhiteSpace(preferredModelName))
+            return defaultModel;
+
+        var selectedModel = availableModels.FirstOrDefault(model => model.Name == preferredModelName);
+        return selectedModel?.ModelPath ?? defaultModel;
+    }
+
+    public void ApplyHumanModel(IPlayer player, HZPMainCFG cfg)
+    {
+        if (player == null || !player.IsValid)
+            return;
+
+        var pawn = player.PlayerPawn;
+        if (pawn == null || !pawn.IsValid)
+            return;
+
+        var modelPath = GetHumanModelPathForPlayer(player, cfg);
+        pawn.SetModel(modelPath);
+    }
+
+    public void ScheduleApplyHumanModel(IPlayer player, HZPMainCFG cfg, float delaySeconds = 0.15f)
+    {
+        if (player == null || !player.IsValid)
+            return;
+
+        void ApplyIfStillHuman()
+        {
+            if (player == null || !player.IsValid)
+                return;
+
+            var id = player.PlayerID;
+            _globals.IsZombie.TryGetValue(id, out var isZombie);
+            _globals.IsSurvivor.TryGetValue(id, out var isSurvivor);
+            _globals.IsSniper.TryGetValue(id, out var isSniper);
+            _globals.IsHero.TryGetValue(id, out var isHero);
+
+            if (isZombie || isSurvivor || isSniper || isHero)
+                return;
+
+            _core.Scheduler.NextWorldUpdate(() =>
+            {
+                if (player != null && player.IsValid)
+                {
+                    ApplyHumanModel(player, cfg);
+                }
+            });
+        }
+
+        if (delaySeconds <= 0)
+        {
+            ApplyIfStillHuman();
+            return;
+        }
+
+        _core.Scheduler.DelayBySeconds(delaySeconds, ApplyIfStillHuman);
+    }
+
+    public void AssignBotHumanModels(HZPMainCFG cfg)
+    {
+        var availableModels = GetEnabledHumanModels(cfg);
+        if (availableModels.Count == 0)
+            return;
+
+        var bots = _core.PlayerManager.GetAllPlayers()
+            .Where(player => player != null && player.IsValid && player.IsFakeClient)
+            .Cast<IPlayer>()
+            .ToList();
+
+        if (bots.Count == 0)
+            return;
+
+        var shuffledModels = availableModels
+            .OrderBy(_ => Random.Shared.Next())
+            .ToList();
+
+        for (int index = 0; index < bots.Count; index++)
+        {
+            var bot = bots[index];
+            var selectedModel = shuffledModels[index % shuffledModels.Count];
+            _zombieState.SetLocalHumanModelPreference(bot.PlayerID, selectedModel.Name);
+        }
     }
 
     public void SetInvisibility(IPlayer player)
@@ -1036,8 +1189,6 @@ public partial class HZPHelpers
 
     public void SetAllDefaultModel(HZPMainCFG CFG)
     {
-        string Default = "characters/models/ctm_st6/ctm_st6_variante.vmdl";
-        string Custom = string.IsNullOrEmpty(CFG.HumandefaultModel) ? Default : CFG.HumandefaultModel;
         var allplayer = _core.PlayerManager.GetAllPlayers();
         foreach (var player in allplayer)
         {
@@ -1051,7 +1202,7 @@ public partial class HZPHelpers
                     var pawn = player.PlayerPawn;
                     if (pawn != null && pawn.IsValid)
                     {
-                        pawn.SetModel(Custom);
+                        ScheduleApplyHumanModel(player, CFG, 0.15f);
                     }
                 }
             });

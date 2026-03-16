@@ -151,6 +151,7 @@ public partial class HZPEvents
             var VoxCFG = _voxCFG.CurrentValue;
             var VoxList = VoxCFG.VoxList;
 
+            _helpers.AssignBotHumanModels(CFG);
             _helpers.SetAllDefaultModel(CFG);
 
             //_logger.LogInformation("开始选择游戏模式...");
@@ -266,6 +267,7 @@ public partial class HZPEvents
                 _globals.IsSniper[id] = false;
                 _globals.IsNemesis[id] = false;
                 _globals.IsHero[id] = false;
+                _globals.PendingZombieRespawnClass.Remove(id);
 
                 _globals.ScbaSuit[id] = false;
                 _globals.GodState[id] = false;
@@ -275,7 +277,7 @@ public partial class HZPEvents
                 _helpers.SetUnInvisibility(player);
 
                 player.SwitchTeam(Team.CT);
-                _helpers.ChangeKnife(player, false, false);
+                _helpers.RestoreHumanKnife(player);
                 _helpers.SetFov(player, 90);
 
             }
@@ -373,6 +375,11 @@ public partial class HZPEvents
             @event.AddItem(HumanDefaultModel);
         }
 
+        foreach (var humanModel in _helpers.GetEnabledHumanModels(CFG))
+        {
+            @event.AddItem(humanModel.ModelPath);
+        }
+
         var SpecialzombieConfig = _SpecialClassCFG.CurrentValue;
         var SpecialzombieList = SpecialzombieConfig.SpecialClassList;
         foreach (var Specialsounds in SpecialzombieList)
@@ -440,8 +447,9 @@ public partial class HZPEvents
             });
 
             _globals.IsZombie.TryGetValue(Id, out bool IsZombie);
+            bool isPendingZombieRespawn = _globals.PendingZombieRespawnClass.ContainsKey(Id);
 
-            if (IsZombie)
+            if (IsZombie || isPendingZombieRespawn)
             {
                 _core.Scheduler.NextWorldUpdate(() =>
                 {
@@ -457,7 +465,12 @@ public partial class HZPEvents
 
                         ZombieClass? zombie = null;
 
-                        if (preference != null)
+                        if (_globals.PendingZombieRespawnClass.TryGetValue(Id, out var pendingClassName))
+                        {
+                            zombie = zombieClasses.FirstOrDefault(c => c.Name == pendingClassName && c.Enable);
+                        }
+
+                        if (zombie == null && preference != null)
                         {
                             if (preference.Preference == ZombiePreference.Fixed)
                             {
@@ -470,7 +483,7 @@ public partial class HZPEvents
                                 //_logger.LogInformation($"随机僵尸类: {zombie?.Name}");
                             }
                         }
-                        else
+                        else if (zombie == null)
                         {
                             zombie = _zombieState.GetZombieClass(Id, zombieConfig.ZombieClassList, specialConfig.SpecialClassList);
                             if (zombie == null)
@@ -503,6 +516,8 @@ public partial class HZPEvents
                     pawn.MaxHealthUpdated();
                     pawn.Health = CFG.HumanMaxHealth;
                     pawn.HealthUpdated();
+
+                    _helpers.ScheduleApplyHumanModel(player, CFG, 0.15f);
 
                     pawn.ActualGravityScale = CFG.HumanInitialGravity;
 
@@ -592,7 +607,7 @@ public partial class HZPEvents
 
                     if (preference != null && preference.Preference == ZombiePreference.Fixed)
                     {
-                        selectedClass = zombieClasses.FirstOrDefault(c => c.Name == preference.FixedZombieName);
+                        selectedClass = zombieClasses.FirstOrDefault(c => c.Name == preference.FixedZombieName && c.Enable);
                     }
                     else
                     {
@@ -601,8 +616,10 @@ public partial class HZPEvents
 
                     if (selectedClass != null)
                     {
-                        _service.posszombie(player, selectedClass, false);
-                        _service.PlayerSelectSoundtoAll(selectedClass.Sounds.SoundInfect, selectedClass.Stats.ZombieSoundVolume);
+                        _globals.PendingZombieRespawnClass[Id] = selectedClass.Name;
+                        _zombieState.SetPlayerZombieClass(Id, selectedClass.Name);
+                        _globals.IsZombie[Id] = true;
+                        player.Respawn();
                     }
                 });
 
@@ -909,6 +926,8 @@ public partial class HZPEvents
         _globals.StopZombieTimers.Remove(id);
         _globals.g_IsInvisible.Remove(id);
         _globals.ThrowerIsZombie.Remove(id);
+        _globals.PendingZombieRespawnClass.Remove(id);
+        _zombieState.ClearPlayerRuntimeState(id);
 
         _globals.InSwing[id] = false;
 

@@ -22,7 +22,7 @@
 			},
 			"Models": 
 			{
-			  "ModelPath": "characters/models/voikanaa/feral_ghoul_fonv/feral_ghoul_fonv.vmdl",
+			  "ModelPath": "characters/models/s2ze/bsi_zombie/zombie_bsi.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 
@@ -174,7 +174,7 @@
 			},
 			"Models": 
 			{
-			  "ModelPath": "characters/models/hmn_sk2/zombie/xenomorph/xenomorph_sk2model.vmdl",
+			  "ModelPath": "characters/models/daemonium_luka/daemonium_luka.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 
@@ -193,7 +193,7 @@
 			}
 		},
 		{
-			"Name": "女科学家丧尸",
+			"Name": "女丧尸",
 			"Enable": true,
 			"PrecacheSoundEvent": "soundevents/hanzbplayerstate.vsndevts",
 			"Stats": 
@@ -212,7 +212,7 @@
 			},
 			"Models": 
 			{
-			  "ModelPath": "characters/models/kaesar/zombie_girl/zombie_girl.vmdl",
+			  "ModelPath": "characters/models/hoshistar/zombiezeta/zombie_f/zombie_f.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 

@@ -21,13 +21,14 @@ public class HZPCommands
     private readonly IOptionsMonitor<HZPMainCFG> _mainCFG;
     private readonly HZPGlobals _globals;
     private readonly HZPZombieClassMenu _hZPZombieClassMenu;
+    private readonly HZPHumanModelMenu _hZPHumanModelMenu;
     private readonly HZPAdminItemMenu _hZPAdminItemMenu;
     private readonly HZPHelpers _helpers;
 
     public HZPCommands(ISwiftlyCore core, ILogger<HZPCommands> logger,
         HZPServices services, IOptionsMonitor<HZPMainCFG> mainCFG,
         HZPGlobals globals, HZPAdminItemMenu hZPAdminItemMenu,
-        HZPZombieClassMenu hZPZombieClassMenu, HZPHelpers helpers)
+        HZPZombieClassMenu hZPZombieClassMenu, HZPHumanModelMenu hZPHumanModelMenu, HZPHelpers helpers)
     {
         _core = core;
         _logger = logger;
@@ -36,6 +37,7 @@ public class HZPCommands
         _globals = globals;
         _hZPAdminItemMenu = hZPAdminItemMenu;
         _hZPZombieClassMenu = hZPZombieClassMenu;
+        _hZPHumanModelMenu = hZPHumanModelMenu;
         _helpers = helpers;
     }
 
@@ -43,6 +45,7 @@ public class HZPCommands
     {
         var CFG = _mainCFG.CurrentValue;
         _core.Command.RegisterCommand(CFG.ZombieClassCommand, SelectZombieClass, true);
+        _core.Command.RegisterCommand(CFG.HumanModelMenuCommand, SelectHumanModel, true);
 
         _core.Command.RegisterCommand(CFG.AdminMenuItemCommand, UseItemMenu, true);
     }
@@ -54,6 +57,15 @@ public class HZPCommands
 
         _hZPZombieClassMenu.OpenZombieClassMenu(player);
 
+    }
+
+    public void SelectHumanModel(ICommandContext context)
+    {
+        var player = context.Sender;
+        if (player == null || !player.IsValid)
+            return;
+
+        _hZPHumanModelMenu.OpenHumanModelMenu(player);
     }
 
     public void UseItemMenu(ICommandContext context)

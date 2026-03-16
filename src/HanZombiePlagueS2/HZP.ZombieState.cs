@@ -12,6 +12,10 @@ public class PlayerZombieState
 
     public Dictionary<ulong, string> ExternalPreferences { get; set; } = new();
 
+    public Dictionary<int, string> PlayerHumanModelPreferences { get; set; } = new();
+
+    public Dictionary<ulong, string> ExternalHumanModelPreferences { get; set; } = new();
+
     public ZombieClass? PickRandomZombieClass(List<ZombieClass> zombieClasses)
     {
         if (zombieClasses == null) return null;
@@ -21,6 +25,20 @@ public class PlayerZombieState
 
         return enabled[Random.Shared.Next(enabled.Count)];
     }
+
+    public HumanModelConfig? PickRandomHumanModel(List<HumanModelConfig> humanModels)
+    {
+        if (humanModels == null) return null;
+
+        var enabled = humanModels
+            .Where(model => model.Enable && !string.IsNullOrWhiteSpace(model.ModelPath))
+            .ToList();
+
+        if (enabled.Count == 0) return null;
+
+        return enabled[Random.Shared.Next(enabled.Count)];
+    }
+
     public void SetPlayerZombieClass(int slot, string className)
     {
         PlayerZombieClass[slot] = className;
@@ -200,6 +218,64 @@ public class PlayerZombieState
         {
             ExternalPreferences[steamId] = className;
         }
+    }
+
+    public string? GetPlayerHumanModelPreference(int slot, ulong steamId = 0)
+    {
+        if (steamId > 0 && ExternalHumanModelPreferences.TryGetValue(steamId, out var externalModelName))
+        {
+            return externalModelName;
+        }
+
+        if (PlayerHumanModelPreferences.TryGetValue(slot, out var localModelName))
+        {
+            return localModelName;
+        }
+
+        return null;
+    }
+
+    public void SetPlayerHumanModelPreference(int slot, ulong steamId, string? modelName)
+    {
+        if (string.IsNullOrWhiteSpace(modelName))
+        {
+            PlayerHumanModelPreferences.Remove(slot);
+            if (steamId > 0)
+            {
+                ExternalHumanModelPreferences.Remove(steamId);
+            }
+
+            return;
+        }
+
+        PlayerHumanModelPreferences[slot] = modelName;
+        if (steamId > 0)
+        {
+            ExternalHumanModelPreferences[steamId] = modelName;
+        }
+    }
+
+    public string? GetLocalHumanModelPreference(int slot)
+    {
+        return PlayerHumanModelPreferences.TryGetValue(slot, out var modelName) ? modelName : null;
+    }
+
+    public void SetLocalHumanModelPreference(int slot, string? modelName)
+    {
+        if (string.IsNullOrWhiteSpace(modelName))
+        {
+            PlayerHumanModelPreferences.Remove(slot);
+            return;
+        }
+
+        PlayerHumanModelPreferences[slot] = modelName;
+    }
+
+    public void ClearPlayerRuntimeState(int slot)
+    {
+        PlayerZombieClass.Remove(slot);
+        PlayerPreferences.Remove(slot);
+        PlayerHumanModelPreferences.Remove(slot);
     }
 
 

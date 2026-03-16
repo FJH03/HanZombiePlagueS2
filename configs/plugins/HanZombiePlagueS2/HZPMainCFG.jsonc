@@ -19,7 +19,7 @@
 		"MotherZombieNames": "母体僵尸",
 		"MotherZombieCount": 5,
 		"Weight": 50,
-		"EnableInfiniteClipMode": true,
+		"EnableInfiniteClipMode": false,
 		"ZombieCanReborn": true
 	},
 	"Nemesis": 
@@ -28,7 +28,7 @@
 		"Name": "复仇之神模式",
 		"NemesisNames": "复仇之神",
 		"Weight": 50,
-		"EnableInfiniteClipMode": true,
+		"EnableInfiniteClipMode": false,
 		"ZombieCanReborn": true
 	},
 	"Survivor": 
@@ -52,7 +52,7 @@
 		"Enable": true,
 		"Name": "军团模式",
 		"Weight": 50,
-		"EnableInfiniteClipMode": true,
+		"EnableInfiniteClipMode": false,
 		"ZombieCanReborn": false
 	},
 	"Plague": 
@@ -62,7 +62,7 @@
 		"Weight": 50,
 		"NemesisNames": "复仇之神",
 		"SurvivorNames": "幸存者",
-		"EnableInfiniteClipMode": true,
+		"EnableInfiniteClipMode": false,
 		"ZombieCanReborn": true
 	},
 	"Assassin": 
@@ -98,7 +98,7 @@
 		"Weight": 50,
 		"AssassinNames": "暗杀者",
 		"SniperNames": "狙击手",
-		"EnableInfiniteClipMode": true,
+		"EnableInfiniteClipMode": false,
 		"ZombieCanReborn": true
 	},
 	"Hero": 
@@ -117,6 +117,49 @@
 		"ZombieCanReborn": true
 	},
 	"HumandefaultModel": "characters/models/ctm_st6/ctm_st6_variante.vmdl",
+	"HumanModelMenuCommand": "sw_hmodel",
+	"HumanModelList": [
+	  {
+		"Name": "百可花",
+		"Enable": true,
+		"ModelPath": "characters/models/bacopa/bacopa.vmdl"
+	  },
+	  {
+		"Name": "幼灵梦1",
+		"Enable": true,
+		"ModelPath": "characters/models/reimu/cloth1.vmdl"
+	  },
+	  {
+		"Name": "幼灵梦2",
+		"Enable": true,
+		"ModelPath": "characters/models/reimu/cloth2.vmdl"
+	  },
+	  {
+		"Name": "幼灵梦3",
+		"Enable": true,
+		"ModelPath": "characters/models/reimu/cloth3.vmdl"
+	  },
+	  {
+		"Name": "miku",
+		"Enable": true,
+		"ModelPath": "characters/models/miku/miku.vmdl"
+	  },
+	  {
+		"Name": "miku2",
+		"Enable": true,
+		"ModelPath": "characters/models/miku/miku2.vmdl"
+	  },
+	  {
+		"Name": "miku3",
+		"Enable": true,
+		"ModelPath": "characters/models/miku/miku3.vmdl"
+	  },
+	  {
+		"Name": "g11",
+		"Enable": true,
+		"ModelPath": "characters/models/g11/g11.vmdl"
+	  }
+	],
 	"HumanMaxHealth": 225,
 	"HumanInitialSpeed": 1.0,
 	"HumanInitialGravity": 0.8,
@@ -127,7 +170,7 @@
 	"HumanHeroKnockBackMultiply": 1.0,
 	"EnableDamageHud": true,
 	"EnableInfiniteReserveAmmo": true,
-	"EnableWeaponNoRecoil": true,
+	"EnableWeaponNoRecoil": false,
 	"HumanSpawnPoints": "CT,T,DM",
 	"ZombieSpawnPoints": "CT,T,DM",
 	"KnockZombieForce": 250.0,
