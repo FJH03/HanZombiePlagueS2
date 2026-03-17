@@ -3,7 +3,7 @@
     "ZombieClassList": 
 	[
 		{
-			"Name": "红骷髅",
+			"Name": "zuidai",
 			"Enable": true,
 			"PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
 			"Stats": 
@@ -22,7 +22,7 @@
 			},
 			"Models": 
 			{
-			  "ModelPath": "characters/models/s2ze/bsi_zombie/zombie_bsi.vmdl",
+			  "ModelPath": "characters/models/zuidai/zuidai.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 
@@ -41,7 +41,7 @@
 			}
 		},
 		{
-			"Name": "白骷髅",
+			"Name": "zuidai2",
 			"Enable": true,
 			"PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
 			"Stats": 
@@ -60,7 +60,7 @@
 			},
 			"Models": 
 			{
-			  "ModelPath": "characters/models/s2ze/zombie_cultist/zombie_cultist.vmdl",
+			  "ModelPath": "characters/models/zuidai/zuidai2.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 
@@ -79,7 +79,7 @@
 			}
 		},
 		{
-			"Name": "frozen",
+			"Name": "zuidai3",
 			"Enable": false,
 			"PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
 			"Stats": 
@@ -98,7 +98,7 @@
 			},
 			"Models": 
 			{
-			  "ModelPath": "characters/models/s2ze/zombie_frozen/zombie_frozen.vmdl",
+			  "ModelPath": "characters/models/zuidai/zuidai3.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 
@@ -117,7 +117,7 @@
 			}
 		},
 		{
-			"Name": "胖子",
+			"Name": "zuidai4",
 			"Enable": false,
 			"PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
 			"Stats": 
@@ -136,7 +136,7 @@
 			},
 			"Models": 
 			{
-			  "ModelPath": "characters/models/s2ze/chris_walker/chris_walker.vmdl",
+			  "ModelPath": "characters/models/zuidai/zuidai4.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 
@@ -150,82 +150,6 @@
 			  "BurnSound": "han.zombieplague.zburn",
 			  "ExplodeSound": "han.hl.zombie.idle",
 			  "HitSound": "han.zombie.classic_hit",
-			  "HitWallSound": "han.zombie.classic_hitwall",
-			  "SwingSound": "han.zombie.classic_swing"
-			}
-		},
-		{
-			"Name": "异形女王",
-			"Enable": true,
-			"PrecacheSoundEvent": "soundevents/hanzbplayerstate.vsndevts",
-			"Stats": 
-			{
-			  "Health": 2500,
-			  "MotherZombieHealth": 12500,
-			  "Speed": 2.0,
-			  "Damage": 50.0,
-			  "Gravity": 0.2,
-			  "Fov": 110,
-			  "EnableRegen": true,
-			  "HpRegenSec": 10.0,
-			  "HpRegenHp": 5,
-			  "ZombieSoundVolume": 1.0,
-			  "IdleInterval": 70.0
-			},
-			"Models": 
-			{
-			  "ModelPath": "characters/models/daemonium_luka/daemonium_luka.vmdl",
-			  "CustomKinfeModelPath": ""
-			},
-			"Sounds": 
-			{
-			  "SoundInfect": "han.human.femdeath,han.zombie.cso2.feminfect",
-			  "SoundPain": "han.hl.zombie.pain",
-			  "SoundHurt": "han.zombie.femclassic_hurt",
-			  "SoundDeath": "han.zombie.femclassic_death",
-			  "IdleSound": "han.zombie.cso2.femidle,han.zombie.state.femidle",
-			  "RegenSound": "han.zombie.state.femheal",
-			  "BurnSound": "han.zombie.state.femburn",
-			  "ExplodeSound": "han.hl.zombie.idle",
-			  "HitSound": "han.zombie.cso2.femclaw",
-			  "HitWallSound": "han.zombie.classic_hitwall",
-			  "SwingSound": "han.zombie.classic_swing"
-			}
-		},
-		{
-			"Name": "女丧尸",
-			"Enable": true,
-			"PrecacheSoundEvent": "soundevents/hanzbplayerstate.vsndevts",
-			"Stats": 
-			{
-			  "Health": 1800,
-			  "MotherZombieHealth": 12000,
-			  "Speed": 1.8,
-			  "Damage": 50.0,
-			  "Gravity": 0.5,
-			  "Fov": 110,
-			  "EnableRegen": true,
-			  "HpRegenSec": 10.0,
-			  "HpRegenHp": 5,
-			  "ZombieSoundVolume": 1.0,
-			  "IdleInterval": 70.0
-			},
-			"Models": 
-			{
-			  "ModelPath": "characters/models/hoshistar/zombiezeta/zombie_f/zombie_f.vmdl",
-			  "CustomKinfeModelPath": ""
-			},
-			"Sounds": 
-			{
-			  "SoundInfect": "han.human.femdeath,han.zombie.cso2.feminfect",
-			  "SoundPain": "han.hl.zombie.pain",
-			  "SoundHurt": "han.zombie.femclassic_hurt",
-			  "SoundDeath": "han.zombie.femclassic_death",
-			  "IdleSound": "han.zombie.cso2.femidle,han.zombie.state.femidle",
-			  "RegenSound": "han.zombie.state.femheal",
-			  "BurnSound": "han.zombie.state.femburn",
-			  "ExplodeSound": "han.hl.zombie.idle",
-			  "HitSound": "han.zombie.cso2.femclaw",
 			  "HitWallSound": "han.zombie.classic_hitwall",
 			  "SwingSound": "han.zombie.classic_swing"
 			}

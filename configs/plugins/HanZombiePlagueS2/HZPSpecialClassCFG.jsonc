@@ -21,26 +21,26 @@
 			},
 			"Models": 
 			{
-			  "ModelPath": "characters/models/hoshistar/zombiezeta/normalhost/normalhost.vmdl",
+			  "ModelPath": "characters/models/sunflower_fairy/sunflower_fairy.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 
 			{
-			  "SoundInfect": "han.human.mandeath",
+			  "SoundInfect": "han.human.femdeath,han.zombie.cso2.feminfect",
 			  "SoundPain": "han.hl.zombie.pain",
-			  "SoundHurt": "han.zombie.manclassic_hurt",
-			  "SoundDeath": "han.zombie.manclassic_death",
-			  "IdleSound": "han.hl.nihilanth.idle,han.hl.nihilanth.idleb,han.hl.nihilanth.idlec",
-			  "RegenSound": "han.zombie.state.manheal",
-			  "BurnSound": "han.zombieplague.zburn",
+			  "SoundHurt": "han.zombie.femclassic_hurt",
+			  "SoundDeath": "han.zombie.femclassic_death",
+			  "IdleSound": "han.zombie.cso2.femidle,han.zombie.state.femidle",
+			  "RegenSound": "han.zombie.state.femheal",
+			  "BurnSound": "han.zombie.state.femburn",
 			  "ExplodeSound": "han.hl.zombie.idle",
-			  "HitSound": "han.zombie.classic_hit",
+			  "HitSound": "han.zombie.cso2.femclaw",
 			  "HitWallSound": "han.zombie.classic_hitwall",
 			  "SwingSound": "han.zombie.classic_swing"
 			}
 		},
 		{
-			"Name": "重装僵尸",
+			"Name": "复仇之神",
 			"Enable": true,
 			"PrecacheSoundEvent": "soundevents/hanzombieplagueplayers.vsndevts",
 			"Stats": 
@@ -59,20 +59,20 @@
 			},
 			"Models": 
 			{
-			  "ModelPath": "characters/models/hoshistar/zombiezeta/mutation_heavy/mutation_heavy.vmdl",
+			  "ModelPath": "characters/models/zombie_fairy/zombie_fairy.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 
 			{
-			  "SoundInfect": "han.hl.zombie.infec,han.sic.infectplayer,han.sic.screamA",
+			  "SoundInfect": "han.human.femdeath,han.zombie.cso2.feminfect",
 			  "SoundPain": "han.hl.zombie.pain",
-			  "SoundHurt": "han.hl.zombie.pain",
-			  "SoundDeath": "han.hl.zombie.die",
-			  "IdleSound": "han.hl.nihilanth.idle,han.hl.nihilanth.idleb,han.hl.nihilanth.idlec",
-			  "RegenSound": "han.zombie.state.manheal",
-			  "BurnSound": "han.zombieplague.zburn",
+			  "SoundHurt": "han.zombie.femclassic_hurt",
+			  "SoundDeath": "han.zombie.femclassic_death",
+			  "IdleSound": "han.zombie.cso2.femidle,han.zombie.state.femidle",
+			  "RegenSound": "han.zombie.state.femheal",
+			  "BurnSound": "han.zombie.state.femburn",
 			  "ExplodeSound": "han.hl.zombie.idle",
-			  "HitSound": "han.zombie.classic_hit",
+			  "HitSound": "han.zombie.cso2.femclaw",
 			  "HitWallSound": "han.zombie.classic_hitwall",
 			  "SwingSound": "han.zombie.classic_swing"
 			}
@@ -97,7 +97,7 @@
 			},
 			"Models": 
 			{
-			  "ModelPath": "characters/models/daemonium_luka/daemonium_luka.vmdl",
+			  "ModelPath": "characters/models/kurumi/kurumi.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 
@@ -114,7 +114,6 @@
 			  "HitWallSound": "han.zombie.classic_hitwall",
 			  "SwingSound": "han.zombie.classic_swing"
 			}
-		
 		}
 	
 	]

@@ -117,12 +117,17 @@
 		"ZombieCanReborn": true
 	},
 	"HumandefaultModel": "characters/models/ctm_st6/ctm_st6_variante.vmdl",
-	"HumanModelMenuCommand": "sw_hmodel",
+	"HumanModelMenuCommand": "sw_model",
 	"HumanModelList": [
 	  {
 		"Name": "百可花",
 		"Enable": true,
 		"ModelPath": "characters/models/bacopa/bacopa.vmdl"
+	  },
+	  {
+		"Name": "优香",
+		"Enable": true,
+		"ModelPath": "characters/models/zaolaiyouxiang/zaolaiyouxiang.vmdl"
 	  },
 	  {
 		"Name": "幼灵梦1",
@@ -138,6 +143,21 @@
 		"Name": "幼灵梦3",
 		"Enable": true,
 		"ModelPath": "characters/models/reimu/cloth3.vmdl"
+	  },
+	  {
+		"Name": "kyouka",
+		"Enable": true,
+		"ModelPath": "characters/models/kyouka/kyouka.vmdl"
+	  },
+	  {
+		"Name": "laffey",
+		"Enable": true,
+		"ModelPath": "characters/models/laffey/laffey.vmdl"
+	  },
+	  {
+		"Name": "alice_note",
+		"Enable": true,
+		"ModelPath": "characters/models/alice_note/alice.vmdl"
 	  },
 	  {
 		"Name": "miku",
