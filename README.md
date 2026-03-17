@@ -18,6 +18,8 @@
 
 ## 视频
 https://www.bilibili.com/video/BV1c3cJzrEWn
+
+如果遇到客户端崩溃问题,可使用 https://github.com/H-AN/HZPFixes 降低崩溃概率
 </div>
 
 ---
