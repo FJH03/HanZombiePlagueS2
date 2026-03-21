@@ -8,8 +8,8 @@
 			"PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
 			"Stats": 
 			{
-			  "Health": 8000,
-			  "MotherZombieHealth": 18000,
+			  "Health": 1600,
+			  "MotherZombieHealth": 3600,
 			  "Speed": 1.0,
 			  "Damage": 50.0,
 			  "Gravity": 0.7,
@@ -46,8 +46,8 @@
 			"PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
 			"Stats": 
 			{
-			  "Health": 3000,
-			  "MotherZombieHealth": 13000,
+			  "Health": 600,
+			  "MotherZombieHealth": 2600,
 			  "Speed": 1.1,
 			  "Damage": 50.0,
 			  "Gravity": 0.8,
@@ -80,12 +80,12 @@
 		},
 		{
 			"Name": "zuidai3",
-			"Enable": false,
+			"Enable": true,
 			"PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
 			"Stats": 
 			{
-			  "Health": 5000,
-			  "MotherZombieHealth": 15000,
+			  "Health": 1000,
+			  "MotherZombieHealth": 3000,
 			  "Speed": 1.7,
 			  "Damage": 50.0,
 			  "Gravity": 0.7,
@@ -118,12 +118,12 @@
 		},
 		{
 			"Name": "zuidai4",
-			"Enable": false,
+			"Enable": true,
 			"PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
 			"Stats": 
 			{
-			  "Health": 5000,
-			  "MotherZombieHealth": 15000,
+			  "Health": 1000,
+			  "MotherZombieHealth": 3000,
 			  "Speed": 1.7,
 			  "Damage": 50.0,
 			  "Gravity": 0.8,

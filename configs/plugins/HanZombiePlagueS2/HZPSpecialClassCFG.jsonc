@@ -7,8 +7,8 @@
 			"PrecacheSoundEvent": "soundevents/hanzbplayers.vsndevts",
 			"Stats": 
 			{
-			  "Health": 15000,
-			  "MotherZombieHealth": 20000,
+			  "Health": 3000,
+			  "MotherZombieHealth": 4000,
 			  "Speed": 1.5,
 			  "Damage": 150.0,
 			  "Gravity": 0.5,
@@ -45,8 +45,8 @@
 			"PrecacheSoundEvent": "soundevents/hanzombieplagueplayers.vsndevts",
 			"Stats": 
 			{
-			  "Health": 30000,
-			  "MotherZombieHealth": 50000,
+			  "Health": 6000,
+			  "MotherZombieHealth": 10000,
 			  "Speed": 0.8,
 			  "Damage": 150.0,
 			  "Gravity": 1.0,
@@ -83,8 +83,8 @@
 			"PrecacheSoundEvent": "soundevents/hanzbplayerstate.vsndevts",
 			"Stats": 
 			{
-			  "Health": 15000,
-			  "MotherZombieHealth": 35000,
+			  "Health": 3000,
+			  "MotherZombieHealth": 7000,
 			  "Speed": 2.5,
 			  "Damage": 50.0,
 			  "Gravity": 0.4,
