@@ -35,7 +35,7 @@ If you encounter client crashes, you can use https://github.com/H-AN/HZPFixes to
 Example Workshop files
 ```
 sound : 3644652779
-zombie models : 3655494223
+zombie models : 3327753176
 ```
 
 ---
