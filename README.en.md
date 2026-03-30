@@ -35,7 +35,9 @@ If you encounter client crashes, you can use https://github.com/H-AN/HZPFixes to
 Example Workshop files
 ```
 sound : 3644652779
-zombie models : 3327753176
+zombie models : ❗Due to copyright restrictions, weapon model examples are no longer provided.
+
+This plugin is compatible with any character model; please find your own model to use!
 ```
 
 ---
