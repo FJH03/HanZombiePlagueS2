@@ -48,7 +48,7 @@ public partial class HZPHelpers
         SetFov(player, 90);
         ClearPlayerBurn(Id);
 
-        pawn.SetModel(models);
+        SetPlayerModelFixed(pawn, models);
         pawn.MaxHealth = maxHealth;
         pawn.MaxHealthUpdated();
         pawn.Health = maxHealth;

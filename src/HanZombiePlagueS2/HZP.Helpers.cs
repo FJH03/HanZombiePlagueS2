@@ -384,7 +384,7 @@ public partial class HZPHelpers
             return;
 
         var modelPath = GetHumanModelPathForPlayer(player, cfg);
-        pawn.SetModel(modelPath);
+        SetPlayerModelFixed(pawn, modelPath);
     }
 
     public void ScheduleApplyHumanModel(IPlayer player, HZPMainCFG cfg, float delaySeconds = 0.15f)
@@ -1318,6 +1318,63 @@ public partial class HZPHelpers
         return entity;
     }
 
-    
+    public void SetPlayerModelFixed(CCSPlayerPawn pawn, string modelPath)
+    {
+        if (pawn == null || !pawn.IsValid)
+            return;
 
+        if (pawn.LifeState != (byte)LifeState_t.LIFE_ALIVE)
+            return;
+
+        if (string.IsNullOrWhiteSpace(modelPath))
+            return;
+
+        pawn.SetModel(modelPath);
+        FixPlayerModelAnimations(pawn);
+    }
+
+    public void FixPlayerModelAnimations(CCSPlayerPawn pawn)
+    {
+        if (pawn == null || !pawn.IsValid)
+            return;
+
+        if (pawn.LifeState != (byte)LifeState_t.LIFE_ALIVE)
+            return;
+
+        var originalMoveType = pawn.ActualMoveType;
+
+        // 参考 CS2Fixes：只对正常可行走状态做修复
+        if ((int)originalMoveType < (int)MoveType_t.MOVETYPE_WALK)
+            return;
+
+        var pawnHandle = _core.EntitySystem.GetRefEHandle(pawn);
+        if (!pawnHandle.IsValid)
+            return;
+
+        var originalVelocity = pawn.AbsVelocity;
+
+        // CS2Fixes 这里用的是 MOVETYPE_OBSOLETE。
+        var tempMoveType = MoveType_t.MOVETYPE_OBSOLETE;
+
+        pawn.Teleport(null, null, new Vector(0, 0, 0));
+        pawn.MoveType = tempMoveType;
+        pawn.ActualMoveType = tempMoveType;
+        pawn.MoveTypeUpdated();
+
+        _core.Scheduler.DelayBySeconds(0.02f, () =>
+        {
+            if (!pawnHandle.IsValid || pawnHandle.Value == null || !pawnHandle.Value.IsValid)
+                return;
+
+            var currentPawn = pawnHandle.Value;
+            if (currentPawn.LifeState != (byte)LifeState_t.LIFE_ALIVE)
+                return;
+
+            currentPawn.MoveType = MoveType_t.MOVETYPE_WALK;
+            currentPawn.ActualMoveType = MoveType_t.MOVETYPE_WALK;
+            currentPawn.MoveTypeUpdated();
+
+            currentPawn.Teleport(null, null, originalVelocity);
+        });
+    }
 }

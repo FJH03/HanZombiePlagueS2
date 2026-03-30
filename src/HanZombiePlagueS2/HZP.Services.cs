@@ -371,7 +371,7 @@ public partial class HZPServices
             string path = Zclass.Models.ModelPath;
             _core.Scheduler.NextWorldUpdate(() =>
             {
-                pawn.SetModel(path);
+                _helpers.SetPlayerModelFixed(pawn, path);
             });
             
             _helpers.DropAllWeapon(zombie);
