@@ -4,7 +4,7 @@
 	"RoundTime": "4.0",
 	"NormalInfection": 
 	{
-		"Enable": true,
+		"Enable": false,
 		"Name": "感染模式",
 		"MotherZombieNames": "母体僵尸",
 		"MotherZombieCount": 1,
@@ -17,7 +17,7 @@
 		"Enable": true,
 		"Name": "多重感染模式",
 		"MotherZombieNames": "母体僵尸",
-		"MotherZombieCount": 5,
+		"MotherZombieCount": 3,
 		"Weight": 50,
 		"EnableInfiniteClipMode": false,
 		"ZombieCanReborn": true
@@ -33,7 +33,7 @@
 	},
 	"Survivor": 
 	{
-		"Enable": true,
+		"Enable": false,
 		"Name": "幸存者模式",
 		"Weight": 50,
 		"SurvivorNames": "幸存者",
@@ -49,7 +49,7 @@
 	},
 	"Swarm": 
 	{
-		"Enable": true,
+		"Enable": false,
 		"Name": "军团模式",
 		"Weight": 50,
 		"EnableInfiniteClipMode": false,
@@ -57,7 +57,7 @@
 	},
 	"Plague": 
 	{
-		"Enable": true,
+		"Enable": false,
 		"Name": "瘟疫模式",
 		"Weight": 50,
 		"NemesisNames": "复仇之神",
@@ -77,7 +77,7 @@
 	},
 	"Sniper": 
 	{
-		"Enable": true,
+		"Enable": false,
 		"Name": "狙击手模式",
 		"Weight": 50,
 		"SniperNames": "狙击手",
@@ -93,7 +93,7 @@
 	},
 	"AVS": 
 	{
-		"Enable": true,
+		"Enable": false,
 		"Name": "狙击手VS暗杀者",
 		"Weight": 50,
 		"AssassinNames": "暗杀者",
@@ -103,7 +103,7 @@
 	},
 	"Hero": 
 	{
-		"Enable": true,
+		"Enable": false,
 		"Name": "英雄模式",
 		"Weight": 50,
 		"HeroCount": 3,
