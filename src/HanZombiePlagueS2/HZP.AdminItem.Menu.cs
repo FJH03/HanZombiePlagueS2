@@ -106,10 +106,9 @@ public class HZPAdminItemMenu
                     maxHealth = CFG.HumanMaxHealth;
                 }
 
-                string Default = "characters/models/ctm_st6/ctm_st6_variante.vmdl";
-                string Custom = string.IsNullOrEmpty(CFG.HumandefaultModel) ? Default : CFG.HumandefaultModel;
+                string modelPath = _helpers.GetHumanModelPathForPlayer(clicker, CFG);
 
-                _helpers.TVaccine(clicker, maxHealth, CFG.HumanInitialSpeed, Custom, CFG.TVaccineSound, 1.0f);
+                _helpers.TVaccine(clicker, maxHealth, CFG.HumanInitialSpeed, modelPath, CFG.TVaccineSound, 1.0f);
                 clicker.SendMessage(MessageType.Chat, _helpers.T(clicker, "ItemTVaccineSuccess"));
                 _core.PlayerManager.SendMessage(MessageType.Chat, _helpers.T(player, "ItemTVaccineSuccessToAll", clicker.Name));
             });

@@ -226,7 +226,7 @@
 	"ZombieClassCommand": "sw_zclass",
 	"AdminMenuItemCommand": "sw_zmenu",
 	"AdminMenuPermission": "",
-	"AmbSound": "han.zombie.amb.zriot,han.zombie.amb.classicA,han.zombie.amb.classicB,han.zombie.amb.classicC,han.zombie.amb.classicD",
+	"AmbSound": "",
 	"AmbSoundLoopTime": "60.0",
 	"AmbSoundVolume": "0.8",
 	"PrecacheAmbSound": "soundevents/hanzbambience.vsndevts,soundevents/hanzombiepanicplayer.vsndevts"
