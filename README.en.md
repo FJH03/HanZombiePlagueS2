@@ -12,16 +12,6 @@
      <div align="center"><strong>supports API expansion.</p></div>
 </div>
 
-<div align="center">
-
-<div style="display:flex; align-items:center; gap:6px;">
-  <span>Support yumiai :</span>
-  <a href="https://yumi.chat:3000/">
-    <img src="https://yumi.chat:3000/logo.png" width="50">
-  </a>
-  <span>(The best AI model provider, click the icon to visit the official website.)</span>
-</div>
-
 ---
 
 如果你喜欢这个插件,可以用以下方式支持我,感谢!
