@@ -126,7 +126,7 @@
 	"HumanKnockBackAirMultiply": 0.5,
 	"HumanHeroKnockBackMultiply": 1.0,
 	"HumanFriendFire": false,
-	"EnableDamageHud": true,
+	"EnableDamageHud": false,
 	"EnableRadarInfo": false,
 	"EnableInfiniteReserveAmmo": true,
 	"EnableWeaponNoRecoil": true,
