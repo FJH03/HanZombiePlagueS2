@@ -81,6 +81,7 @@ public partial class HZPEvents
         _core.Event.OnWeaponServicesCanUseHook += Event_OnWeaponServicesCanUseHook;
         _core.Event.OnPrecacheResource += Event_OnPrecacheResource;
         _core.Event.OnTick += Event_OnTickSpeed;
+
         _core.Event.OnTick += Event_OnTickNoRecoil;
 
         _core.GameEvent.HookPre<EventWeaponFire>(OnHumanWeaponFire);
@@ -1005,7 +1006,7 @@ public partial class HZPEvents
         }
 
     }
-
+    
     private void Event_OnTickNoRecoil()
     {
         var CFG = _mainCFG.CurrentValue;
@@ -1037,15 +1038,19 @@ public partial class HZPEvents
             if (weapon == null || !weapon.IsValid)
                 continue;
 
-            pawn.AimPunchAngle.Pitch = 0;
-            pawn.AimPunchAngle.Yaw = 0;
-            pawn.AimPunchAngle.Roll = 0;
-            pawn.AimPunchAngleVel.Pitch = 0;
-            pawn.AimPunchAngleVel.Yaw = 0;
-            pawn.AimPunchAngleVel.Roll = 0;
-            pawn.AimPunchTickFraction = 0;
+            var AimPunchServices = pawn.AimPunchServices;
+            if (AimPunchServices == null || !AimPunchServices.IsValid)
+                continue;
+
+            AimPunchServices.PredictableBaseAngle.Pitch = 0;
+            AimPunchServices.PredictableBaseAngle.Yaw = 0;
+            AimPunchServices.PredictableBaseAngle.Roll = 0;
+            AimPunchServices.PredictableBaseAngleVel.Pitch = 0;
+            AimPunchServices.PredictableBaseAngleVel.Yaw = 0;
+            AimPunchServices.PredictableBaseAngleVel.Roll = 0;
         }
     }
+    
 
     private void Event_OnHumanTakeDamage(SwiftlyS2.Shared.Events.IOnEntityTakeDamageEvent @event)
     {
