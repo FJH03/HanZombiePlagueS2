@@ -43,7 +43,7 @@
 		"SurvivorDamage": 5.0,
 		"SurvivorWeapon": "weapon_m249",
 		"CustomWeaponName": "幸存者M249",
-		"ModelsPath": "characters/models/tm_phoenix_heavy/tm_phoenix_heavy.vmdl",
+		"ModelsPath": "agents/models/tm_professional/tm_professional_varh.vmdl",
 		"EnableInfiniteClipMode": false,
 		"ZombieCanReborn": false
 	},
@@ -87,7 +87,7 @@
 		"SniperDamage": 10.0,
 		"SniperWeapon": "weapon_awp",
 		"CustomWeaponName": "狙击英雄AWP",
-		"ModelsPath": "characters/models/tm_professional/tm_professional_varf4.vmdl",
+		"ModelsPath": "agents/models/tm_professional/tm_professional_varj.vmdl",
 		"EnableInfiniteClipMode": false,
 		"ZombieCanReborn": true
 	},
@@ -112,11 +112,11 @@
 		"HeroSpeed": 3.0,
 		"HeroGravity": 0.4,
 		"HeroDamage": 50.0,
-		"ModelsPath": "characters/models/ctm_heavy/ctm_heavy.vmdl",
+		"ModelsPath": "agents/models/ctm_gendarmerie/ctm_gendarmerie_variantd.vmdl",
 		"EnableInfiniteClipMode": false,
 		"ZombieCanReborn": true
 	},
-	"HumandefaultModel": "characters/models/ctm_st6/ctm_st6_variante.vmdl",
+	"HumandefaultModel": "agents/models/ctm_st6/ctm_st6_variante.vmdl",
 	"HumanMaxHealth": 225,
 	"HumanInitialSpeed": 1.0,
 	"HumanInitialGravity": 0.8,
@@ -125,9 +125,10 @@
 	"HumanKnockBackGroundMultiply": 1.0,
 	"HumanKnockBackAirMultiply": 0.5,
 	"HumanHeroKnockBackMultiply": 1.0,
+	"HumanFriendFire": false,
 	"EnableDamageHud": true,
 	"EnableInfiniteReserveAmmo": true,
-	"EnableWeaponNoRecoil": true,
+	"EnableWeaponNoRecoil": false,
 	"HumanSpawnPoints": "CT,T,DM",
 	"ZombieSpawnPoints": "CT,T,DM",
 	"KnockZombieForce": 250.0,
@@ -165,7 +166,7 @@
 	"AdminMenuPermission": "",
 	"AmbSound": "han.zombie.amb.zriot,han.zombie.amb.classicA,han.zombie.amb.classicB,han.zombie.amb.classicC,han.zombie.amb.classicD",
 	"AmbSoundLoopTime": "60.0",
-	"AmbSoundVolume": "0.8",
+	"AmbSoundVolume": 0.8,
 	"PrecacheAmbSound": "soundevents/hanzbambience.vsndevts,soundevents/hanzombiepanicplayer.vsndevts"
   }
 }
