@@ -116,7 +116,7 @@
 		"EnableInfiniteClipMode": false,
 		"ZombieCanReborn": true
 	},
-	"HumandefaultModel": "characters/models/ctm_st6/ctm_st6_variante.vmdl",
+	"HumandefaultModel": "characters/models/youniaoxia/youniaoxia.vmdl",
 	"HumanModelMenuCommand": "sw_model",
 	"HumanModelList": [
 	  {
