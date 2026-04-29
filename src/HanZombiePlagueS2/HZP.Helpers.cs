@@ -381,7 +381,7 @@ public partial class HZPHelpers
                 weapon.AcceptInput("ChangeSubclass", "507");
                 weapon.AttributeManager.Item.Initialized = true;
                 weapon.AttributeManager.Item.ItemDefinitionIndex = 507;
-                //weapon.SetModel("");
+                weapon.SetModel("");
                 weapon.AttributeManager.Item.CustomName = T(player, "ZombieClaw");
                 weapon.AttributeManager.Item.CustomNameOverride = T(player, "ZombieClaw");
                 weapon.AttributeManager.Item.CustomNameUpdated();

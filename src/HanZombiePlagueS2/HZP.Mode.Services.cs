@@ -277,47 +277,45 @@ public partial class HZPServices
     public void SetupHero()
     {
         var mode = _gameMode.CurrentMode;
-        if (mode != GameModeType.Hero)
+        if (mode != GameModeType.Hero || !_globals.GameStart)
             return;
 
         if(_globals.IsheroSetup)
             return;
 
-        var allPlayers = _core.PlayerManager.GetAlive();
-        var aliveHumans = allPlayers.Where(p =>
+        _core.Scheduler.NextWorldUpdate(() =>
         {
-            var id = p.PlayerID;
-            return _globals.IsZombie.TryGetValue(id, out var isZombie) && !isZombie;
-        }).ToList();
+            if (_gameMode.CurrentMode != GameModeType.Hero || _globals.IsheroSetup || !_globals.GameStart)
+                return;
 
-        if (aliveHumans.Count == 0)
-            return;
+            var aliveHumans = GetAliveHumanPlayersForHeroSetup();
 
-        int heroCount = _mainCFG.CurrentValue.Hero.HeroCount;
+            if (aliveHumans.Count == 0)
+                return;
 
-        //_logger.LogInformation($"[调试] 人类数量: {aliveHumans.Count}, 英雄配置: {heroCount}");
+            int heroCount = _mainCFG.CurrentValue.Hero.HeroCount;
 
-        // 只有当人类数量 <= 英雄数量时，才有人成为英雄
-        if (aliveHumans.Count > heroCount)
-        {
-            //移除所有英雄状态
-            //_logger.LogInformation($"[调试] 移除所有英雄状态");
+            //_logger.LogInformation($"[HeroDebug] Alive humans: {aliveHumans.Count}, HeroCount: {heroCount}");
+
+            if (aliveHumans.Count > heroCount)
+            {
+                //_logger.LogInformation("[HeroDebug] Clearing hero flags because alive humans exceed HeroCount");
+                foreach (var player in aliveHumans)
+                {
+                    _globals.IsHero.Remove(player.PlayerID);
+                }
+
+                return;
+            }
+
+            //_logger.LogInformation($"[HeroDebug] Promoting remaining {aliveHumans.Count} humans to heroes");
             foreach (var player in aliveHumans)
             {
-                _globals.IsHero.Remove(player.PlayerID);
+                posshero(player);
             }
-            return;
-        }
 
-        // 人类数量 <= 英雄数量，所有人都成为英雄
-        //_logger.LogInformation($"[调试] 所有 {aliveHumans.Count} 个人类成为英雄");
-        foreach (var player in aliveHumans)
-        {
-            posshero(player);
-        }
-
-        _globals.IsheroSetup = true;
-
+            _globals.IsheroSetup = true;
+        });
     }
 
     public void SetupSurvivor(IPlayer player)
@@ -826,6 +824,41 @@ public partial class HZPServices
             if (!isZombie)
                 result.Add(p);
         }
+        return result;
+    }
+
+    private List<IPlayer> GetAliveHumanPlayersForHeroSetup()
+    {
+        var alivePlayers = _core.PlayerManager.GetAlive();
+        var result = new List<IPlayer>();
+
+        foreach (var player in alivePlayers)
+        {
+            if (player == null || !player.IsValid)
+                continue;
+
+            var pawn = player.PlayerPawn;
+            if (pawn == null || !pawn.IsValid)
+                continue;
+
+            var id = player.PlayerID;
+            bool isZombieState = _globals.IsZombie.TryGetValue(id, out var currentIsZombie) && currentIsZombie;
+            bool isZombieTeam = pawn.TeamNum == (int)Team.T;
+            bool isHumanTeam = pawn.TeamNum == (int)Team.CT;
+
+            if (isZombieState != isZombieTeam)
+            {
+                _logger.LogInformation($"[HeroDebug] Syncing hero count state for {player.Name}: TeamNum={pawn.TeamNum}, IsZombie={isZombieState} -> {isZombieTeam}");
+                _globals.IsZombie[id] = isZombieTeam;
+                isZombieState = isZombieTeam;
+            }
+
+            if (!isZombieState && isHumanTeam)
+            {
+                result.Add(player);
+            }
+        }
+
         return result;
     }
 
