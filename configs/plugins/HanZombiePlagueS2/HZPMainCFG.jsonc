@@ -118,6 +118,7 @@
 	},
 	"HumandefaultModel": "characters/models/marisa/marisa.vmdl",
 	"HumanModelMenuCommand": "sw_model",
+	"HumanWeaponMenuCommand": "sw_weapon",
 	"HumanModelList": [
 	  {
 		"Name": "百可花",

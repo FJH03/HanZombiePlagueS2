@@ -119,7 +119,8 @@ public class HZPMainCFG
     public HeroConfig Hero { get; set; } = new();
 
     public string HumandefaultModel { get; set; } = string.Empty;
-    public string HumanModelMenuCommand { get; set; } = "sw_hmodel";
+    public string HumanModelMenuCommand { get; set; } = "sw_model";
+    public string HumanWeaponMenuCommand { get; set; } = "sw_weapon";
     public List<HumanModelConfig> HumanModelList { get; set; } = new();
     public int HumanMaxHealth { get; set; } = 225;
     public bool EnableDamageHud { get; set; } = true;

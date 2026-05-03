@@ -22,13 +22,15 @@ public class HZPCommands
     private readonly HZPGlobals _globals;
     private readonly HZPZombieClassMenu _hZPZombieClassMenu;
     private readonly HZPHumanModelMenu _hZPHumanModelMenu;
+    private readonly HZPHumanWeaponMenu _hZPHumanWeaponMenu;
     private readonly HZPAdminItemMenu _hZPAdminItemMenu;
     private readonly HZPHelpers _helpers;
 
     public HZPCommands(ISwiftlyCore core, ILogger<HZPCommands> logger,
         HZPServices services, IOptionsMonitor<HZPMainCFG> mainCFG,
         HZPGlobals globals, HZPAdminItemMenu hZPAdminItemMenu,
-        HZPZombieClassMenu hZPZombieClassMenu, HZPHumanModelMenu hZPHumanModelMenu, HZPHelpers helpers)
+        HZPZombieClassMenu hZPZombieClassMenu, HZPHumanModelMenu hZPHumanModelMenu,
+        HZPHumanWeaponMenu hZPHumanWeaponMenu, HZPHelpers helpers)
     {
         _core = core;
         _logger = logger;
@@ -38,6 +40,7 @@ public class HZPCommands
         _hZPAdminItemMenu = hZPAdminItemMenu;
         _hZPZombieClassMenu = hZPZombieClassMenu;
         _hZPHumanModelMenu = hZPHumanModelMenu;
+        _hZPHumanWeaponMenu = hZPHumanWeaponMenu;
         _helpers = helpers;
     }
 
@@ -46,6 +49,7 @@ public class HZPCommands
         var CFG = _mainCFG.CurrentValue;
         _core.Command.RegisterCommand(CFG.ZombieClassCommand, SelectZombieClass, true);
         _core.Command.RegisterCommand(CFG.HumanModelMenuCommand, SelectHumanModel, true);
+        _core.Command.RegisterCommand(CFG.HumanWeaponMenuCommand, SelectHumanWeapon, true);
 
         _core.Command.RegisterCommand(CFG.AdminMenuItemCommand, UseItemMenu, true);
     }
@@ -66,6 +70,15 @@ public class HZPCommands
             return;
 
         _hZPHumanModelMenu.OpenHumanModelMenu(player);
+    }
+
+    public void SelectHumanWeapon(ICommandContext context)
+    {
+        var player = context.Sender;
+        if (player == null || !player.IsValid)
+            return;
+
+        _hZPHumanWeaponMenu.OpenHumanWeaponMenu(player);
     }
 
     public void UseItemMenu(ICommandContext context)
