@@ -116,7 +116,7 @@
 		"EnableInfiniteClipMode": false,
 		"ZombieCanReborn": true
 	},
-	"HumandefaultModel": "characters/models/youniaoxia/youniaoxia.vmdl",
+	"HumandefaultModel": "characters/models/marisa/marisa.vmdl",
 	"HumanModelMenuCommand": "sw_model",
 	"HumanModelList": [
 	  {
@@ -125,7 +125,7 @@
 		"ModelPath": "characters/models/bacopa/bacopa.vmdl"
 	  },
 	  {
-		"Name": "优香",
+		"Name": "早濑优香",
 		"Enable": true,
 		"ModelPath": "characters/models/zaolaiyouxiang/zaolaiyouxiang.vmdl"
 	  },
@@ -143,6 +143,41 @@
 		"Name": "幼灵梦3",
 		"Enable": true,
 		"ModelPath": "characters/models/reimu/cloth3.vmdl"
+	  },
+	  {
+		"Name": "幼灵梦4",
+		"Enable": true,
+		"ModelPath": "characters/models/reimu/cloth4.vmdl"
+	  },
+	  {
+		"Name": "星野1",
+		"Enable": true,
+		"ModelPath": "characters/models/hoshino/hoshino.vmdl"
+	  },
+	  {
+		"Name": "星野2",
+		"Enable": true,
+		"ModelPath": "characters/models/xingye/xingye.vmdl"
+	  },
+	  {
+		"Name": "由乃香",
+		"Enable": true,
+		"ModelPath": "characters/models/youniaoxia/youniaoxia.vmdl"
+	  },
+	  {
+		"Name": "艾伦",
+		"Enable": true,
+		"ModelPath": "characters/models/allen/allen.vmdl"
+	  },
+	  {
+		"Name": "天宫心1",
+		"Enable": true,
+		"ModelPath": "characters/models/amamiya_kokoro/amamiya_kokoro_cloth1_nohitbox.vmdl"
+	  },
+	  {
+		"Name": "天宫心2",
+		"Enable": true,
+		"ModelPath": "characters/models/amamiya_kokoro/amamiya_kokoro_cloth2_nohitbox.vmdl"
 	  },
 	  {
 		"Name": "kyouka",
