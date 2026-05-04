@@ -39,6 +39,7 @@ https://www.bilibili.com/video/BV1c3cJzrEWn
 ```
 音效 : 3644652779
 丧尸模型 : 3718944950
+本插件 必须使用最新版本AG2角色模型
 ```
 
 ---
