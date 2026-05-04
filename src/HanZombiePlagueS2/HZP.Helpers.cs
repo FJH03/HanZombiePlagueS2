@@ -98,7 +98,7 @@ public partial class HZPHelpers
 
     public void RunNextWorldUpdateForPlayer(int playerId, ulong expectedSessionId, int expectedRoundGeneration, Action<IPlayer, CCSPlayerPawn> action, bool requireAlive = false)
     {
-        _core.Scheduler.NextWorldUpdate(() =>
+        _core.Scheduler.DelayBySeconds(0.1f, () =>
         {
             if (!TryResolveCurrentPlayerPawn(playerId, expectedSessionId, expectedRoundGeneration, out var currentPlayer, out var currentPawn, requireAlive))
                 return;
@@ -1137,8 +1137,8 @@ public partial class HZPHelpers
 
     public void SetAllDefaultModel(HZPMainCFG CFG)
     {
-        string Default = "characters/models/ctm_st6/ctm_st6_variante.vmdl";
-        string Custom = string.IsNullOrEmpty(CFG.HumandefaultModel) ? Default : CFG.HumandefaultModel;
+        //string Default = "characters/models/ctm_st6/ctm_st6_variante.vmdl";
+        //string Custom = string.IsNullOrEmpty(CFG.HumandefaultModel) ? Default : CFG.HumandefaultModel;
         int roundGeneration = GetCurrentRoundGeneration();
         var allplayer = _core.PlayerManager.GetAllPlayers();
         foreach (var player in allplayer)
@@ -1148,7 +1148,7 @@ public partial class HZPHelpers
 
             RunNextWorldUpdateForPlayer(player.PlayerID, player.SessionId, roundGeneration, (_, currentPawn) =>
             {
-                SetPlayerModelFixed(currentPawn, Custom);
+                SetPlayerModelFixed(currentPawn, CFG.HumandefaultModel);
             }, requireAlive: true);
 
         }

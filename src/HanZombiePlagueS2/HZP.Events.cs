@@ -1224,6 +1224,16 @@ public partial class HZPEvents
             activeWeapon.ReserveAmmo[0] = 1000;
         }
 
+        bool shouldInfiniteClip = _globals.GameInfiniteClipMode || IsInfiniteAmmoState ||
+        (IsSurvivor && activeWeapon.DesignerName == CFG.Survivor.SurvivorWeapon) ||
+        (IsSniper && activeWeapon.DesignerName == CFG.Sniper.SniperWeapon) || IsHero;
+
+        if (shouldInfiniteClip)
+        {
+            activeWeapon.Clip1 = 100;
+            activeWeapon.Clip1Updated();
+        }
+        /*
         if (_globals.GameInfiniteClipMode)
         {
             activeWeapon.Clip1 = 100;
@@ -1249,6 +1259,7 @@ public partial class HZPEvents
             activeWeapon.Clip1 = 100;
             activeWeapon.Clip1Updated();
         }
+        */
 
         return HookResult.Continue;
     }
