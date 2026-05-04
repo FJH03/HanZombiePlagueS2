@@ -30,7 +30,7 @@ If you like this plugin, you can support me in the following ways. Thank you!
 ## 视频
 https://www.bilibili.com/video/BV1c3cJzrEWn
 
-如果遇到客户端崩溃问题,可使用 https://github.com/H-AN/HZPFixes 降低崩溃概率
+如果遇到客户端崩溃问题,请勿使用官方特工模型,服务器统一使用适合最新版本的正确AG2自定义模型
 </div>
 
 ---
@@ -38,7 +38,8 @@ https://www.bilibili.com/video/BV1c3cJzrEWn
 插件可以配合以下创意工坊资源使用
 ```
 音效 : 3644652779
-丧尸模型 : ❗ 由于模型版权方要求,模型示例已经不再提供,本插件适用于任何角色模型,请自行寻找模型进行使用!
+丧尸模型 : 3718944950
+本插件 必须使用最新版本AG2角色模型
 ```
 
 ---
