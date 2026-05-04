@@ -37,7 +37,7 @@ Example Workshop files
 sound : 3644652779
 zombie models : 3718944950
 
-This plugin is compatible with any character model; please find your own model to use!
+This plugin requires the latest AG2 character models.
 ```
 ---
 
