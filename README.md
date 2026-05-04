@@ -30,7 +30,7 @@ If you like this plugin, you can support me in the following ways. Thank you!
 ## 视频
 https://www.bilibili.com/video/BV1c3cJzrEWn
 
-如果遇到客户端崩溃问题,请勿使用官方特工模型,服务器统一使用社区自定义模型
+如果遇到客户端崩溃问题,请勿使用官方特工模型,服务器统一使用适合最新版本的正确AG2自定义模型
 </div>
 
 ---
