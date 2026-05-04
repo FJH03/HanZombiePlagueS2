@@ -27,7 +27,7 @@ If you like this plugin, you can support me in the following ways. Thank you!
 ## video
 https://www.youtube.com/watch?v=DVeR5u28M_s
 
-If you encounter client crashes, you can use https://github.com/H-AN/HZPFixes to reduce the probability of crashes.
+If you encounter client crashes, please do not use the official agent model. The server should consistently use the correct AG2 custom model compatible with the latest version.
 </div>
 
 ---
@@ -35,7 +35,7 @@ If you encounter client crashes, you can use https://github.com/H-AN/HZPFixes to
 Example Workshop files
 ```
 sound : 3644652779
-zombie models : ❗Due to copyright restrictions, model examples are no longer provided.
+zombie models : 3718944950
 
 This plugin is compatible with any character model; please find your own model to use!
 ```
