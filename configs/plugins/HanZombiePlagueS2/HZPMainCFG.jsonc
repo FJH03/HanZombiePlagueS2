@@ -121,9 +121,19 @@
 	"HumanWeaponMenuCommand": "sw_gun",
 	"HumanModelList": [
 	  {
+		"Name": "魔理沙(默认)",
+		"Enable": true,
+		"ModelPath": "characters/models/marisa/marisa.vmdl"
+	  },
+	  {
 		"Name": "百可花",
 		"Enable": true,
 		"ModelPath": "characters/models/bacopa/bacopa.vmdl"
+	  },
+	  {
+		"Name": "樱花千代王",
+		"Enable": true,
+		"ModelPath": "characters/models/sakura_chiyono/sakura_chiyono.vmdl"
 	  },
 	  {
 		"Name": "早濑优香",
@@ -254,7 +264,7 @@
 	"FreezeGrenadeRange": 300.0,
 	"FreezeGrenadeDuration": 10.0,
 	"FreezeGrenadeSound": "han.zombieplague.grenadedote",
-	"TelportGrenade": true,
+	"TelportGrenade": false,
 	"SpawnGiveTelportGrenade": false,
 	"CanUseScbaSuit": true,
 	"ScbaSuitGetSound": "Player.PickupPistol",
