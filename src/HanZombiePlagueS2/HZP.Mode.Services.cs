@@ -348,6 +348,33 @@ public partial class HZPServices
             _api.NotifySniperSelected(player);
     }
 
+    private string GetConfiguredMotherZombieNames()
+    {
+        var mainConfig = _mainCFG.CurrentValue;
+
+        return _gameMode.CurrentMode == GameModeType.MultiInfection
+            ? mainConfig.MultiInfection.MotherZombieNames
+            : mainConfig.NormalInfection.MotherZombieNames;
+    }
+
+    private string GetConfiguredNemesisNames()
+    {
+        var mainConfig = _mainCFG.CurrentValue;
+
+        return _gameMode.CurrentMode == GameModeType.Plague
+            ? mainConfig.Plague.NemesisNames
+            : mainConfig.Nemesis.NemesisNames;
+    }
+
+    private string GetConfiguredAssassinNames()
+    {
+        var mainConfig = _mainCFG.CurrentValue;
+
+        return _gameMode.CurrentMode == GameModeType.AVS
+            ? mainConfig.AVS.AssassinNames
+            : mainConfig.Assassin.AssassinNames;
+    }
+
     public void SetupMotherZombie(IPlayer player)
     {
         if (player == null || !player.IsValid)
@@ -356,9 +383,12 @@ public partial class HZPServices
         var Id = player.PlayerID;
         _globals.IsMother[Id] = true;
 
+        var configuredMotherZombieNames = GetConfiguredMotherZombieNames();
+        var selectedMotherZombieName = _helpers.SelectConfiguredName(configuredMotherZombieNames);
+
         var specialConfig = _specialClassCFG.CurrentValue;
         var MotherZombieClass = specialConfig.SpecialClassList.FirstOrDefault(c =>
-            c.Name == _mainCFG.CurrentValue.NormalInfection.MotherZombieNames);
+            c.Name == selectedMotherZombieName);
 
         if (MotherZombieClass != null)
         {
@@ -414,9 +444,12 @@ public partial class HZPServices
         var Id = player.PlayerID;
         _globals.IsNemesis[Id] = true;
 
+        var configuredNemesisNames = GetConfiguredNemesisNames();
+        var selectedNemesisName = _helpers.SelectConfiguredName(configuredNemesisNames);
+
         var specialConfig = _specialClassCFG.CurrentValue;
         var nemesisClass = specialConfig.SpecialClassList.FirstOrDefault(c =>
-            c.Name == _mainCFG.CurrentValue.Nemesis.NemesisNames);
+            c.Name == selectedNemesisName);
 
         if (nemesisClass != null)
         {
@@ -484,9 +517,12 @@ public partial class HZPServices
         var Id = player.PlayerID;
         _globals.IsAssassin[Id] = true;
 
+        var configuredAssassinNames = GetConfiguredAssassinNames();
+        var selectedAssassinName = _helpers.SelectConfiguredName(configuredAssassinNames);
+
         var specialConfig = _specialClassCFG.CurrentValue;
         var AssassinClass = specialConfig.SpecialClassList.FirstOrDefault(c =>
-            c.Name == _mainCFG.CurrentValue.Assassin.AssassinNames);
+            c.Name == selectedAssassinName);
 
         if (AssassinClass != null)
         {

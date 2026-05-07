@@ -181,6 +181,27 @@ public partial class HZPHelpers
         }
     }
 
+    public string? SelectConfiguredName(string? configuredNames)
+    {
+        if (string.IsNullOrWhiteSpace(configuredNames))
+            return null;
+
+        var normalizedNames = configuredNames.Trim();
+        if (!normalizedNames.Contains(','))
+            return normalizedNames;
+
+        var names = normalizedNames
+            .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+            .Select(name => name.Trim())
+            .Where(name => !string.IsNullOrEmpty(name))
+            .ToArray();
+
+        if (names.Length == 0)
+            return null;
+
+        return names.Length == 1 ? names[0] : names[Random.Shared.Next(names.Length)];
+    }
+
     public string? RandomSelectSound(string sound)
     {
         if (string.IsNullOrWhiteSpace(sound))
