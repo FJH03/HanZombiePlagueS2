@@ -16,8 +16,6 @@ public partial class HZPEvents
         _core.GameEvent.HookPre<EventPlayerDeath>(OnPlayerSoundDeath);
         _core.GameEvent.HookPre<EventPlayerHurt>(OnPlayerSoundAttack);
         _core.GameEvent.HookPre<EventWeaponFire>(OnWeaponSoundFire);
-        _core.Event.OnEntityTakeDamage += Event_OnEntityTakeSoundDamage;
-        _core.Event.OnEntityTakeDamage += Event_OnInGrenadeDamage;
     }
 
 
@@ -231,32 +229,22 @@ public partial class HZPEvents
         return HookResult.Continue;
     }
 
-    private void Event_OnEntityTakeSoundDamage(IOnEntityTakeDamageEvent @event)
+    private void HandleEntityTakeSoundDamage(IOnEntityTakeDamageEvent @event, DamageEventContext context)
     {
-        var attacker = @event.Info.Attacker.Value;
-        if (attacker == null || !attacker.IsValid)
+        var attackerPlayer = context.AttackerPlayer;
+        if (attackerPlayer == null || !attackerPlayer.IsValid)
             return;
 
-        var AttackerPawn = attacker.As<CCSPlayerPawn>();
-        if (AttackerPawn == null || !AttackerPawn.IsValid)
+        if (!TryGetActiveWeapon(context.AttackerPawn, out var activeWeapon))
             return;
 
-        var AttackerController = AttackerPawn.Controller.Value?.As<CCSPlayerController>();
-        if (AttackerController == null || !AttackerController.IsValid)
+        if (activeWeapon.DesignerName != "weapon_knife")
             return;
 
-        var AttackerPlayer = _core.PlayerManager.GetPlayer((int)(AttackerController.Index - 1));
-        if (AttackerPlayer == null || !AttackerPlayer.IsValid)
-            return;
-
-        var Id = AttackerPlayer.PlayerID;
+        var Id = attackerPlayer.PlayerID;
         _globals.IsZombie.TryGetValue(Id, out bool IsZombie);
 
-
         if (!IsZombie)
-            return;
-
-        if (!_helpers.IsPlayerUsingKnife(AttackerController))
             return;
 
         var zombieConfig = _zombieClassCFG.CurrentValue;
@@ -265,32 +253,20 @@ public partial class HZPEvents
         if (zombie == null)
             return;
 
-        if (@event.Entity.DesignerName != "worldent")
+        if (context.VictimEntity.DesignerName != "worldent")
             return;
 
-        _globals.InSwing[AttackerPlayer.PlayerID] = true;
-        _service.PlayerSelectSoundtoEntity(AttackerPlayer, zombie.Sounds.HitWallSound, zombie.Stats.ZombieSoundVolume);
+        _globals.InSwing[attackerPlayer.PlayerID] = true;
+        _service.PlayerSelectSoundtoEntity(attackerPlayer, zombie.Sounds.HitWallSound, zombie.Stats.ZombieSoundVolume);
     }
 
-    private void Event_OnInGrenadeDamage(IOnEntityTakeDamageEvent @event)
+    private void HandleInGrenadeDamage(IOnEntityTakeDamageEvent @event, DamageEventContext context)
     {
-        var victim = @event.Entity;
-        if (victim == null || !victim.IsValid)
+        var victimPlayer = context.VictimPlayer;
+        if (victimPlayer == null || !victimPlayer.IsValid)
             return;
 
-        var VictimPawn = victim.As<CCSPlayerPawn>();
-        if (VictimPawn == null || !VictimPawn.IsValid)
-            return;
-
-        var VictimController = VictimPawn.Controller.Value?.As<CCSPlayerController>();
-        if (VictimController == null || !VictimController.IsValid)
-            return;
-
-        var VictimPlayer = _core.PlayerManager.GetPlayer((int)(VictimController.Index - 1));
-        if (VictimPlayer == null || !VictimPlayer.IsValid)
-            return;
-
-        var Id = VictimPlayer.PlayerID;
+        var Id = victimPlayer.PlayerID;
         _globals.IsZombie.TryGetValue(Id, out bool IsZombie);
 
         if (!IsZombie)
@@ -306,12 +282,12 @@ public partial class HZPEvents
         {
             if (Random.Shared.Next(0, 10) <= 2) 
             {
-                _service.PlayerSelectSoundtoEntity(VictimPlayer, zombie.Sounds.BurnSound, zombie.Stats.ZombieSoundVolume);
+                _service.PlayerSelectSoundtoEntity(victimPlayer, zombie.Sounds.BurnSound, zombie.Stats.ZombieSoundVolume);
             }
         }
         else if (@event.Info.DamageType == DamageTypes_t.DMG_BLAST)
         {
-            _service.PlayerSelectSoundtoEntity(VictimPlayer, zombie.Sounds.ExplodeSound, zombie.Stats.ZombieSoundVolume);
+            _service.PlayerSelectSoundtoEntity(victimPlayer, zombie.Sounds.ExplodeSound, zombie.Stats.ZombieSoundVolume);
         }
     }
 

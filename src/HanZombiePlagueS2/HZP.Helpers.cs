@@ -115,11 +115,20 @@ public partial class HZPHelpers
         if (pawn == null || !pawn.IsValid)
             return false;
 
-        var controller = pawn.Controller.Value?.As<CCSPlayerController>();
-        if (controller == null || !controller.IsValid)
-            return false;
+        var player = _core.PlayerManager.GetPlayerFromPawn(pawn);
+        if (player == null || !player.IsValid)
+        {
+            var controllerHandle = pawn.Controller;
+            if (!controllerHandle.IsValid)
+                return false;
 
-        var player = _core.PlayerManager.GetPlayer((int)(controller.Index - 1));
+            var controller = controllerHandle.Value?.As<CCSPlayerController>();
+            if (controller == null || !controller.IsValid)
+                return false;
+
+            player = _core.PlayerManager.GetPlayer((int)(controller.Index - 1));
+        }
+
         if (player == null || !player.IsValid)
             return false;
 
@@ -289,7 +298,11 @@ public partial class HZPHelpers
         if (controller == null || !controller.IsValid)
             return false;
 
-        var pawn = controller.PlayerPawn.Value;
+        var pawnHandle = controller.PlayerPawn;
+        if (!pawnHandle.IsValid)
+            return false;
+
+        var pawn = pawnHandle.Value;
         if (pawn == null || !pawn.IsValid)
             return false;
 
@@ -297,7 +310,11 @@ public partial class HZPHelpers
         if (weaponServices == null || !weaponServices.IsValid)
             return false;
 
-        var activeWeapon = weaponServices.ActiveWeapon.Value;
+        var activeWeaponHandle = weaponServices.ActiveWeapon;
+        if (!activeWeaponHandle.IsValid)
+            return false;
+
+        var activeWeapon = activeWeaponHandle.Value;
         if (activeWeapon == null || !activeWeapon.IsValid)
             return false;
 
