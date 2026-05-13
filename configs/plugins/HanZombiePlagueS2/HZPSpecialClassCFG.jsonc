@@ -7,21 +7,59 @@
 			"PrecacheSoundEvent": "soundevents/hanzbplayers.vsndevts",
 			"Stats": 
 			{
-			  "Health": 15000,
-			  "MotherZombieHealth": 20000,
-			  "Speed": 1.5,
-			  "Damage": 150.0,
-			  "Gravity": 0.5,
-			  "Fov": 110,
-			  "EnableRegen": true,
-			  "HpRegenSec": 1.0,
-			  "HpRegenHp": 50,
-			  "ZombieSoundVolume": 1.0,
-			  "IdleInterval": 70.0
+				  "Health": 22000,
+				  "MotherZombieHealth": 28000,
+				  "Speed": 1.08,
+				  "Damage": 120.0,
+				  "Gravity": 0.85,
+				  "Fov": 105,
+				  "EnableRegen": true,
+				  "HpRegenSec": 1.5,
+				  "HpRegenHp": 80,
+				  "ZombieSoundVolume": 0.4,
+				  "IdleInterval": 80.0
 			},
 			"Models": 
 			{
-			  "ModelPath": "characters/models/hoshistar/zombiezeta/normalhost/normalhost.vmdl",
+			  "ModelPath": "agents/models/han/hanzombie/hostzombie/hostzombie.vmdl",
+			  "CustomKinfeModelPath": ""
+			},
+			"Sounds": 
+			{
+			  "SoundInfect": "han.human.mandeath",
+			  "SoundPain": "han.hl.zombie.pain",
+			  "SoundHurt": "han.zombie.manclassic_hurt",
+			  "SoundDeath": "han.zombie.manclassic_death",
+			  "IdleSound": "han.hl.nihilanth.idle,han.hl.nihilanth.idleb,han.hl.nihilanth.idlec",
+			  "RegenSound": "han.zombie.state.manheal",
+			  "BurnSound": "han.zombieplague.zburn",
+			  "ExplodeSound": "han.hl.zombie.idle",
+			  "HitSound": "han.zombie.classic_hit",
+			  "HitWallSound": "han.zombie.classic_hitwall",
+			  "SwingSound": "han.zombie.classic_swing"
+			}
+		},
+		{
+			"Name": "钩子母体僵尸",
+			"Enable": true,
+			"PrecacheSoundEvent": "soundevents/hanzbplayers.vsndevts",
+			"Stats": 
+			{
+				  "Health": 22000,
+				  "MotherZombieHealth": 28000,
+				  "Speed": 1.08,
+				  "Damage": 120.0,
+				  "Gravity": 0.85,
+				  "Fov": 105,
+				  "EnableRegen": true,
+				  "HpRegenSec": 1.5,
+				  "HpRegenHp": 80,
+				  "ZombieSoundVolume": 0.4,
+				  "IdleInterval": 80.0
+			},
+			"Models": 
+			{
+			  "ModelPath": "agents/models/han/tank_zombi_origin/tank_zombi_origin.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 
@@ -45,21 +83,21 @@
 			"PrecacheSoundEvent": "soundevents/hanzombieplagueplayers.vsndevts",
 			"Stats": 
 			{
-			  "Health": 30000,
-			  "MotherZombieHealth": 50000,
-			  "Speed": 2.0,
-			  "Damage": 150.0,
-			  "Gravity": 0.3,
-			  "Fov": 120,
-			  "EnableRegen": true,
-			  "HpRegenSec": 1.0,
-			  "HpRegenHp": 50,
-			  "ZombieSoundVolume": 1.0,
-			  "IdleInterval": 70.0
+				  "Health": 65000,
+				  "MotherZombieHealth": 80000,
+				  "Speed": 1.16,
+				  "Damage": 260.0,
+				  "Gravity": 0.9,
+				  "Fov": 110,
+				  "EnableRegen": true,
+				  "HpRegenSec": 1.2,
+				  "HpRegenHp": 120,
+				  "ZombieSoundVolume": 0.4,
+				  "IdleInterval": 85.0
 			},
 			"Models": 
 			{
-			  "ModelPath": "characters/models/rss/demogorgon/demogorgon.vmdl",
+			  "ModelPath": "agents/models/han/zombiertx/zombiertx.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 
@@ -83,21 +121,21 @@
 			"PrecacheSoundEvent": "soundevents/hanzbplayerstate.vsndevts",
 			"Stats": 
 			{
-			  "Health": 15000,
-			  "MotherZombieHealth": 35000,
-			  "Speed": 2.5,
-			  "Damage": 50.0,
-			  "Gravity": 0.4,
-			  "Fov": 120,
-			  "EnableRegen": true,
-			  "HpRegenSec": 2.0,
-			  "HpRegenHp": 60,
-			  "ZombieSoundVolume": 1.0,
-			  "IdleInterval": 70.0
+				  "Health": 14000,
+				  "MotherZombieHealth": 18000,
+				  "Speed": 1.28,
+				  "Damage": 95.0,
+				  "Gravity": 0.72,
+				  "Fov": 120,
+				  "EnableRegen": true,
+				  "HpRegenSec": 2.0,
+				  "HpRegenHp": 45,
+				  "ZombieSoundVolume": 0.4,
+				  "IdleInterval": 95.0
 			},
 			"Models": 
 			{
-			  "ModelPath": "characters/models/daemonium_luka/daemonium_luka.vmdl",
+			  "ModelPath": "agents/models/han/hanzombie/lightzombie/lightzombie.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 

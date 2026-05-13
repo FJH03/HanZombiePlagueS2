@@ -4,7 +4,7 @@
 		{
 			"Name": "CSOL男性播报",
 			"Enable": true,
-			"Volume": 1.0,
+			"Volume": 0.5,
 			"RoundMusicVox": "han.zombie.round.class_start,han.zombie.round.class_startB",
 			"SecRemainVox": "han.zombie.round.20secremain",
 			"CoundDownVox": "han.zombie.round.mancdone,han.zombie.round.mancdtwo,han.zombie.round.mancdthree,han.zombie.round.mancdfour,han.zombie.round.mancdfive,han.zombie.round.mancdsix,han.zombie.round.mancdseven,han.zombie.round.mancdeight,han.zombie.round.mancdnine,han.zombie.round.mancdten",
@@ -26,7 +26,7 @@
 		{
 			"Name": "CSOL女性播报",
 			"Enable": true,
-			"Volume": 1.0,
+			"Volume": 0.5,
 			"RoundMusicVox": "han.zombie.round.class_startC,han.zombie.round.class_startD",
 			"SecRemainVox": "han.zombie.round.fem20secremain",
 			"CoundDownVox": "han.zombie.round.femcdone,han.zombie.round.femcdtwo,han.zombie.round.femcdthree,han.zombie.round.femcdfour,han.zombie.round.femcdfive,han.zombie.round.femcdsix,han.zombie.round.femcdseven,han.zombie.round.femcdeight,han.zombie.round.femcdnine,han.zombie.round.femcdten",
@@ -48,7 +48,7 @@
 		{
 			"Name": "HL1男性播报",
 			"Enable": true,
-			"Volume": 1.0,
+			"Volume": 0.5,
 			"RoundMusicVox": "han.zombieplague.round.start",
 			"SecRemainVox": "han.hl.round.remaining",
 			"CoundDownVox": "han.hl.round.mancdone,han.hl.round.mancdtwo,han.hl.round.mancdthree,han.hl.round.mancdfour,han.hl.round.mancdfive,han.hl.round.mancdsix,han.hl.round.mancdseven,han.hl.round.mancdeight,han.hl.round.mancdnine,han.hl.round.mancdten",
@@ -70,7 +70,7 @@
 		{
 			"Name": "HL1女性播报",
 			"Enable": true,
-			"Volume": 1.0,
+			"Volume": 0.5,
 			"RoundMusicVox": "han.zombieplague.round.start",
 			"SecRemainVox": "han.hl.round.femremaining",
 			"CoundDownVox": "han.hl.round.femcdone,han.hl.round.femcdtwo,han.hl.round.femcdthree,han.hl.round.femcdfour,han.hl.round.femcdfive,han.hl.round.femcdsix,han.hl.round.femcdseven,han.hl.round.femcdeight,han.hl.round.femcdnine,han.hl.round.femcdten",
@@ -92,7 +92,7 @@
 		{
 			"Name": "僵尸瘟疫播报",
 			"Enable": true,
-			"Volume": 1.0,
+			"Volume": 0.5,
 			"RoundMusicVox": "han.zombieplague.round.start,han.zombie.round.class_start",
 			"SecRemainVox": "han.zombie.round.20secremain",
 			"CoundDownVox": "han.zombie.round.mancdone,han.zombie.round.mancdtwo,han.zombie.round.mancdthree,han.zombie.round.mancdfour,han.zombie.round.mancdfive,han.zombie.round.mancdsix,han.zombie.round.mancdseven,han.zombie.round.mancdeight,han.zombie.round.mancdnine,han.zombie.round.mancdten",
