@@ -647,8 +647,8 @@ public partial class HZPEvents
 
         var CFG = _mainCFG.CurrentValue;
 
-        int Dmg = @event.DmgHealth;
-        int Health = @event.Health;
+        int Dmg = @event.ActualDmgHealth; 
+        int Health = @event.ActualHealth;
         string waepon = @event.Weapon;
         _globals.IsZombie.TryGetValue(aId, out bool attackerIsZombie);
         _globals.IsZombie.TryGetValue(vId, out bool victimIsZombie);
@@ -714,7 +714,7 @@ public partial class HZPEvents
 
         var CFG = _mainCFG.CurrentValue;
 
-        int Dmg = @event.DmgHealth;
+        int Dmg = @event.ActualDmgHealth;
         _globals.IsZombie.TryGetValue(aId, out bool attackerIsZombie);
         _globals.IsZombie.TryGetValue(vId, out bool victimIsZombie);
 

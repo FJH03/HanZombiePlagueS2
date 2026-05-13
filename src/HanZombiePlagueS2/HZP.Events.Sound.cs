@@ -105,7 +105,7 @@ public partial class HZPEvents
         if (zombie == null)
             return HookResult.Continue;
 
-        bool isHeadshot = @event.HitGroup == 1;
+        bool isHeadshot = @event.ActualHitGroup == HitGroup_t.HITGROUP_HEAD;
         string soundPath = isHeadshot ? zombie.Sounds.SoundPain : zombie.Sounds.SoundHurt;
         _service.PlayerSelectSoundtoEntity(player, soundPath, zombie.Stats.ZombieSoundVolume);
         
