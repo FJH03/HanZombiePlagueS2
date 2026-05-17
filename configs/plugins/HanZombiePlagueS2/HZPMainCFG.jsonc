@@ -224,6 +224,26 @@
 		"Name": "g11",
 		"Enable": true,
 		"ModelPath": "characters/models/g11/g11.vmdl"
+	  },
+	  {
+		"Name": "崔智云",
+		"Enable": true,
+		"ModelPath": "agents/models/han/han2026/choi/choi.vmdl"
+	  },
+	  {
+		"Name": "艾玛",
+		"Enable": true,
+		"ModelPath": "agents/models/han/han2026/emma/emma.vmdl"
+	  },
+	  {
+		"Name": "丽莎",
+		"Enable": true,
+		"ModelPath": "agents/models/han/han2026/lisa/lisa.vmdl"
+	  },
+	  {
+		"Name": "米拉",
+		"Enable": true,
+		"ModelPath": "agents/models/han/han2026/mila/mila.vmdl"
 	  }
 	],
 	"HumanMaxHealth": 225,
@@ -264,7 +284,7 @@
 	"FreezeGrenadeRange": 300.0,
 	"FreezeGrenadeDuration": 10.0,
 	"FreezeGrenadeSound": "han.zombieplague.grenadedote",
-	"TelportGrenade": false,
+	"TelportGrenade": true,
 	"SpawnGiveTelportGrenade": false,
 	"CanUseScbaSuit": true,
 	"ScbaSuitGetSound": "Player.PickupPistol",
