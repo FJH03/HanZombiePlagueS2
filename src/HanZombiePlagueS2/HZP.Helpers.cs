@@ -4,7 +4,6 @@ using System.Security.AccessControl;
 using System.Timers;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Mono.Cecil.Cil;
 using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.Convars;
 using SwiftlyS2.Shared.GameEventDefinitions;
@@ -17,7 +16,6 @@ using SwiftlyS2.Shared.Sounds;
 using static Dapper.SqlMapper;
 using static HanZombiePlagueS2.HanZombiePlagueS2;
 using static HanZombiePlagueS2.HZPVoxCFG;
-using static Mono.CompilerServices.SymbolWriter.CodeBlockEntry;
 using static Npgsql.Replication.PgOutput.Messages.RelationMessage;
 
 namespace HanZombiePlagueS2;
@@ -27,13 +25,22 @@ public partial class HZPHelpers
     private readonly ILogger<HZPHelpers> _logger;
     private readonly ISwiftlyCore _core;
     private readonly HZPGlobals _globals;
+    private readonly PlayerZombieState _zombieState;
+    private readonly IOptionsMonitor<HZPMainCFG> _mainCFG;
+    private readonly HZPGameMode _gameMode;
+    private const int RadarInfoMaxByteCount = 17;
+    private readonly Dictionary<int, RadarInfoScrollState> _radarInfoScrollStates = new();
 
     public HZPHelpers(ISwiftlyCore core, ILogger<HZPHelpers> logger,
-        HZPGlobals globals)
+        HZPGlobals globals, PlayerZombieState zombieState,
+        IOptionsMonitor<HZPMainCFG> mainCFG, HZPGameMode gameMode)
     {
         _core = core;
         _logger = logger;
         _globals = globals;
+        _zombieState = zombieState;
+        _mainCFG = mainCFG;
+        _gameMode = gameMode;
     }
 
     public int GetCurrentRoundGeneration()
@@ -1357,6 +1364,145 @@ public partial class HZPHelpers
     {
         return !string.IsNullOrWhiteSpace(customName)
             && customName.StartsWith(prefix, StringComparison.OrdinalIgnoreCase);
+    }
+
+    public void ShowRadarInfo(IPlayer player)
+    {
+        if (player == null || !player.IsValid)
+            return;
+
+        if(player.IsFakeClient)
+            return;
+
+        var pawn = player.PlayerPawn;
+        if (pawn == null || !pawn.IsValid)
+            return;
+
+        if(pawn.LifeState != (byte)LifeState_t.LIFE_ALIVE)
+            return;
+
+        var playerId = player.PlayerID;
+        _globals.IsZombie.TryGetValue(playerId, out var isZombie);
+        var config = _mainCFG.CurrentValue;
+
+        string radarInfo;
+        if (isZombie)
+        {
+            var zombieClassName = _zombieState.GetPlayerZombieClass(playerId);
+            var zombieName = string.IsNullOrWhiteSpace(zombieClassName)
+                ? T(player, "RadarZombie")
+                : zombieClassName;
+            radarInfo = $"{T(player, "RadarType")}: {zombieName}";
+        }
+        else if (_globals.IsSurvivor.TryGetValue(playerId, out var isSurvivor) && isSurvivor)
+        {
+            var survivorNames = _gameMode.CurrentMode == GameModeType.Plague
+                ? config.Plague.SurvivorNames
+                : config.Survivor.SurvivorNames;
+            radarInfo = $"{T(player, "RadarOccupation")}: {GetConfiguredRadarName(survivorNames, "幸存者")}";
+        }
+        else if (_globals.IsSniper.TryGetValue(playerId, out var isSniper) && isSniper)
+        {
+            var sniperNames = _gameMode.CurrentMode == GameModeType.AVS
+                ? config.AVS.SniperNames
+                : config.Sniper.SniperNames;
+            radarInfo = $"{T(player, "RadarOccupation")}: {GetConfiguredRadarName(sniperNames, "狙击手")}";
+        }
+        else if (_globals.IsHero.TryGetValue(playerId, out var isHero) && isHero)
+        {
+            radarInfo = $"{T(player, "RadarOccupation")}: {GetConfiguredRadarName(config.Hero.HeroNames, "英雄")}";
+        }
+        else
+        {
+            radarInfo = $"{T(player, "RadarOccupation")}: {T(player, "RadarHuman")}";
+        }
+
+        radarInfo = GetRadarInfoDisplay(playerId, radarInfo);
+
+        if (pawn.LastPlaceName == radarInfo)
+            return;
+
+        pawn.LastPlaceName = radarInfo;
+        pawn.LastPlaceNameUpdated();
+    }
+
+    public void ClearRadarInfoScrollState(int playerId)
+    {
+        _radarInfoScrollStates.Remove(playerId);
+    }
+
+    public void ClearAllRadarInfoScrollStates()
+    {
+        _radarInfoScrollStates.Clear();
+    }
+
+    private static string GetConfiguredRadarName(string? configuredNames, string fallback)
+    {
+        if (string.IsNullOrWhiteSpace(configuredNames))
+            return fallback;
+
+        var name = configuredNames.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries)
+            .FirstOrDefault();
+        return string.IsNullOrWhiteSpace(name) ? fallback : name;
+    }
+
+    private string GetRadarInfoDisplay(int playerId, string radarInfo)
+    {
+        if (System.Text.Encoding.UTF8.GetByteCount(radarInfo) <= RadarInfoMaxByteCount)
+        {
+            _radarInfoScrollStates.Remove(playerId);
+            return radarInfo;
+        }
+
+        if (!_radarInfoScrollStates.TryGetValue(playerId, out var scrollState)
+            || scrollState.Source != radarInfo)
+        {
+            scrollState = new RadarInfoScrollState(radarInfo);
+            _radarInfoScrollStates[playerId] = scrollState;
+        }
+
+        var (display, endCharacterIndex) = GetRadarInfoWindow(radarInfo, scrollState.StartCharacterIndex);
+        scrollState.StartCharacterIndex = endCharacterIndex == radarInfo.Length
+            ? 0
+            : scrollState.StartCharacterIndex + GetRuneUtf16Length(radarInfo, scrollState.StartCharacterIndex);
+
+        return display;
+    }
+
+    private static int GetRuneUtf16Length(string text, int characterIndex)
+    {
+        return char.IsSurrogatePair(text, characterIndex) ? 2 : 1;
+    }
+
+    private static (string Display, int EndCharacterIndex) GetRadarInfoWindow(string radarInfo, int startCharacterIndex)
+    {
+        var remaining = radarInfo.AsSpan(startCharacterIndex);
+        if (System.Text.Encoding.UTF8.GetByteCount(remaining) <= RadarInfoMaxByteCount)
+            return (remaining.ToString(), radarInfo.Length);
+
+        var byteCount = 0;
+        var charCount = 0;
+        foreach (var rune in remaining.EnumerateRunes())
+        {
+            if (byteCount + rune.Utf8SequenceLength > RadarInfoMaxByteCount)
+                break;
+
+            byteCount += rune.Utf8SequenceLength;
+            charCount += rune.Utf16SequenceLength;
+        }
+
+        return (radarInfo.Substring(startCharacterIndex, charCount), startCharacterIndex + charCount);
+    }
+
+    private sealed class RadarInfoScrollState
+    {
+        public RadarInfoScrollState(string source)
+        {
+            Source = source;
+        }
+
+        public string Source { get; }
+        public int StartCharacterIndex { get; set; }
     }
 
 

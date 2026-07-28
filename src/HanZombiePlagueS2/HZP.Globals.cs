@@ -34,6 +34,7 @@ public class HZPGlobals
 
     public Dictionary<int, ZombieIdleState> g_ZombieIdleStates = new();
     public CancellationTokenSource? g_IdleTimer { get; set; } = null;
+    public CancellationTokenSource? g_RadarInfoTimer { get; set; } = null;
 
     public Dictionary<IPlayer, (int endTick, int fallEndTick, Vector originalVelocity)> jumpBoostState = new();
 

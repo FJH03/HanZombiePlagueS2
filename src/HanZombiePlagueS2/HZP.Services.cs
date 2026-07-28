@@ -75,6 +75,10 @@ public partial class HZPServices
         _globals.g_IdleTimer?.Cancel();
         _globals.g_IdleTimer = null;
 
+        _globals.g_RadarInfoTimer?.Cancel();
+        _globals.g_RadarInfoTimer = null;
+        _helpers.ClearAllRadarInfoScrollStates();
+
         _globals.g_ZombieRegenTimer?.Cancel();
         _globals.g_ZombieRegenTimer = null;
 
@@ -799,6 +803,33 @@ public partial class HZPServices
         _globals.g_ZombieRegenTimer = regenTimer;
 
         _core.Scheduler.StopOnMapChange(_globals.g_ZombieRegenTimer);
+    }
+
+    public void GlobalRadarInfoTimer(int expectedRoundGeneration)
+    {
+        _globals.g_RadarInfoTimer?.Cancel();
+        _globals.g_RadarInfoTimer = null;
+
+        CancellationTokenSource? radarInfoTimer = null;
+        radarInfoTimer = _core.Scheduler.RepeatBySeconds(0.5f, () =>
+        {
+            if (!_helpers.IsRoundGenerationCurrent(expectedRoundGeneration))
+            {
+                radarInfoTimer?.Cancel();
+                return;
+            }
+
+            foreach (var player in _core.PlayerManager.GetAllPlayers())
+            {
+                if (player == null || !player.IsValid)
+                    continue;
+
+                _helpers.ShowRadarInfo(player);
+            }
+        });
+        _globals.g_RadarInfoTimer = radarInfoTimer;
+
+        _core.Scheduler.StopOnMapChange(_globals.g_RadarInfoTimer);
     }
 
     public void GlobalIdleTimer(int expectedRoundGeneration)

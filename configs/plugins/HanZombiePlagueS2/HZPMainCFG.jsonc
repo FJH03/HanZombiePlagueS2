@@ -127,6 +127,7 @@
 	"HumanHeroKnockBackMultiply": 1.0,
 	"HumanFriendFire": false,
 	"EnableDamageHud": true,
+	"EnableRadarInfo": false,
 	"EnableInfiniteReserveAmmo": true,
 	"EnableWeaponNoRecoil": true,
 	"HumanSpawnPoints": "CT,T,DM",

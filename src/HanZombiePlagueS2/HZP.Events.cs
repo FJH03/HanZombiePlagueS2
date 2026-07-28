@@ -5,7 +5,6 @@ using System.Security.AccessControl;
 using System.Security.Cryptography;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Mono.Cecil.Cil;
 using Spectre.Console;
 using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.Events;
@@ -268,6 +267,8 @@ public partial class HZPEvents
 
             _service.GlobalIdleTimer(roundGeneration);
             _service.ZombieRegenTimer(roundGeneration);
+            if (CFG.EnableRadarInfo)
+                _service.GlobalRadarInfoTimer(roundGeneration);
             _service.StartAssassinInvisibilityTimer(configDist, roundGeneration);
         });
         
@@ -937,6 +938,7 @@ public partial class HZPEvents
         var id = @event.PlayerId;
 
         _helpers.ClearPlayerBurn(id);
+        _helpers.ClearRadarInfoScrollState(id);
         _globals.IsZombie.Remove(id);
         _globals.IsMother.Remove(id);
         _globals.IsSurvivor.Remove(id);
