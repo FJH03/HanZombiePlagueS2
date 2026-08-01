@@ -2,7 +2,7 @@
   "HZPSpecialClassCFG": {
     "SpecialClassList": [
 		{
-			"Name": "母体僵尸",
+			"Name": "魔界妖精",
 			"Enable": true,
 			"PrecacheSoundEvent": "soundevents/hanzbplayers.vsndevts",
 			"Stats": 
@@ -21,7 +21,7 @@
 			},
 			"Models": 
 			{
-			  "ModelPath": "agents/models/han/hanzombie/hostzombie/hostzombie.vmdl",
+			  "ModelPath": "characters/models/devildom_fairy/devildom_fairy.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 
@@ -40,7 +40,7 @@
 			}
 		},
 		{
-			"Name": "复仇之神",
+			"Name": "胡梦",
 			"Enable": true,
 			"PrecacheSoundEvent": "soundevents/hanzombieplagueplayers.vsndevts",
 			"Stats": 
@@ -59,7 +59,7 @@
 			},
 			"Models": 
 			{
-			  "ModelPath": "agents/models/han/zombiertx/zombiertx.vmdl",
+			  "ModelPath": "characters/models/kurumi/kurumi.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 
@@ -97,7 +97,7 @@
 			},
 			"Models": 
 			{
-			  "ModelPath": "agents/models/han/hanzombie/lightzombie/lightzombie.vmdl",
+			  "ModelPath": "characters/models/zombie_fairy/zombie_fairy.vmdl",
 			  "CustomKinfeModelPath": ""
 			},
 			"Sounds": 

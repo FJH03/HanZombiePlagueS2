@@ -6,7 +6,7 @@
 	{
 		"Enable": true,
 		"Name": "感染模式",
-		"MotherZombieNames": "母体僵尸",
+		"MotherZombieNames": "魔界妖精",
 		"MotherZombieCount": 1,
 		"Weight": 70,
 		"EnableInfiniteClipMode": false,
@@ -16,7 +16,7 @@
 	{
 		"Enable": false,
 		"Name": "多重感染模式",
-		"MotherZombieNames": "母体僵尸",
+		"MotherZombieNames": "魔界妖精",
 		"MotherZombieCount": 5,
 		"Weight": 70,
 		"EnableInfiniteClipMode": false,
@@ -26,7 +26,7 @@
 	{
 		"Enable": false,
 		"Name": "复仇之神模式",
-		"NemesisNames": "复仇之神",
+		"NemesisNames": "胡梦",
 		"Weight": 15,
 		"EnableInfiniteClipMode": true,
 		"ZombieCanReborn": true
@@ -60,7 +60,7 @@
 		"Enable": false,
 		"Name": "瘟疫模式",
 		"Weight": 10,
-		"NemesisNames": "复仇之神",
+		"NemesisNames": "胡梦",
 		"SurvivorNames": "幸存者",
 		"EnableInfiniteClipMode": true,
 		"ZombieCanReborn": true
@@ -103,7 +103,7 @@
 	},
 	"Hero": 
 	{
-		"Enable": true,
+		"Enable": false,
 		"Name": "英雄模式",
 		"Weight": 10,
 		"HeroCount": 3,
@@ -116,7 +116,7 @@
 		"EnableInfiniteClipMode": false,
 		"ZombieCanReborn": true
 	},
-	"HumandefaultModel": "agents/models/han/csol2player/arctic/arctic.vmdl",
+	"HumandefaultModel": "characters/models/bacopa/swim/swim.vmdl",
 	"HumanMaxHealth": 225,
 	"HumanInitialSpeed": 1.0,
 	"HumanInitialGravity": 0.8,
@@ -164,6 +164,7 @@
 	"ScbaSuitGetSound": "Player.PickupPistol",
 	"ScbaSuitBrokenSound": "Breakable.Flesh",
 	"ZombieClassCommand": "sw_zclass",
+	"HumanClassCommand": "sw_hclass",
 	"AdminMenuItemCommand": "sw_zmenu",
 	"AdminMenuPermission": "admin.dex",
 	"AmbSound": "han.zombie.amb.zriot,han.zombie.amb.classicA,han.zombie.amb.classicB,han.zombie.amb.classicC,han.zombie.amb.classicD",

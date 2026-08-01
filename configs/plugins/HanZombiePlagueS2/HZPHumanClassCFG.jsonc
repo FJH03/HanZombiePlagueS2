@@ -1,0 +1,558 @@
+{
+  "HZPHumanClassCFG": {
+    "HumanClassList": [
+      {
+        "Name": "百可花",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/bacopa/bacopa.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "百可花-泳装",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/bacopa/swim/swim.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "魔理沙",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/marisa/marisa.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "伊蕾娜",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/elaina/elaina.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "樱花千代王",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/sakura_chiyono/sakura_chiyono.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "早濑优香",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/zaolaiyouxiang/zaolaiyouxiang.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "灵梦1",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/reimu/cloth1.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "灵梦2",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/reimu/cloth2.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "灵梦3",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/reimu/cloth3.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "灵梦4",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/reimu/cloth4.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "星野1",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/hoshino/hoshino.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "星野2",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/xingye/xingye.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "由乃香",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/youniaoxia/youniaoxia.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "艾伦",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/allen/allen.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "天宫心1",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/amamiya_kokoro/amamiya_kokoro_cloth1_nohitbox.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "天宫心2",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/amamiya_kokoro/amamiya_kokoro_cloth2_nohitbox.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "kyouka",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/kyouka/kyouka.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "laffey",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/laffey/laffey.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "alice",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/alice/alice.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "alice_note",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/alice_note/alice.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "miku",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/miku/miku.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "miku2",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/miku/miku2.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "miku3",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/miku/miku3.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "g11",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/g11/g11.vmdl",
+          "CustomKnifeModelPath": ""
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      }
+    ]
+  }
+}
