@@ -6,7 +6,7 @@
 	{
 		"Enable": true,
 		"Name": "感染模式",
-		"MotherZombieNames": "母体僵尸,钩子母体僵尸",
+		"MotherZombieNames": "母体僵尸",
 		"MotherZombieCount": 1,
 		"Weight": 70,
 		"EnableInfiniteClipMode": false,
@@ -16,7 +16,7 @@
 	{
 		"Enable": false,
 		"Name": "多重感染模式",
-		"MotherZombieNames": "母体僵尸,钩子母体僵尸",
+		"MotherZombieNames": "母体僵尸",
 		"MotherZombieCount": 5,
 		"Weight": 70,
 		"EnableInfiniteClipMode": false,

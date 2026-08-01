@@ -40,44 +40,6 @@
 			}
 		},
 		{
-			"Name": "钩子母体僵尸",
-			"Enable": true,
-			"PrecacheSoundEvent": "soundevents/hanzbplayers.vsndevts",
-			"Stats": 
-			{
-				  "Health": 22000,
-				  "MotherZombieHealth": 28000,
-				  "Speed": 1.08,
-				  "Damage": 120.0,
-				  "Gravity": 0.85,
-				  "Fov": 105,
-				  "EnableRegen": true,
-				  "HpRegenSec": 1.5,
-				  "HpRegenHp": 80,
-				  "ZombieSoundVolume": 0.4,
-				  "IdleInterval": 80.0
-			},
-			"Models": 
-			{
-			  "ModelPath": "agents/models/han/tank_zombi_origin/tank_zombi_origin.vmdl",
-			  "CustomKinfeModelPath": ""
-			},
-			"Sounds": 
-			{
-			  "SoundInfect": "han.human.mandeath",
-			  "SoundPain": "han.hl.zombie.pain",
-			  "SoundHurt": "han.zombie.manclassic_hurt",
-			  "SoundDeath": "han.zombie.manclassic_death",
-			  "IdleSound": "han.hl.nihilanth.idle,han.hl.nihilanth.idleb,han.hl.nihilanth.idlec",
-			  "RegenSound": "han.zombie.state.manheal",
-			  "BurnSound": "han.zombieplague.zburn",
-			  "ExplodeSound": "han.hl.zombie.idle",
-			  "HitSound": "han.zombie.classic_hit",
-			  "HitWallSound": "han.zombie.classic_hitwall",
-			  "SwingSound": "han.zombie.classic_swing"
-			}
-		},
-		{
 			"Name": "复仇之神",
 			"Enable": true,
 			"PrecacheSoundEvent": "soundevents/hanzombieplagueplayers.vsndevts",
