@@ -19,8 +19,7 @@
           "IdleInterval": 75.0
         },
         "Models": {
-          "ModelPath": "characters/models/zuidai/zuidai.vmdl",
-          "CustomKinfeModelPath": ""
+          "ModelPath": "characters/models/zuidai/zuidai.vmdl"
         },
         "Sounds": {
           "SoundInfect": "han.human.mandeath",
@@ -54,8 +53,7 @@
           "IdleInterval": 75.0
         },
         "Models": {
-          "ModelPath": "characters/models/zuidai/zuidai2.vmdl",
-          "CustomKinfeModelPath": ""
+          "ModelPath": "characters/models/zuidai/zuidai2.vmdl"
         },
         "Sounds": {
           "SoundInfect": "han.human.mandeath",
@@ -89,8 +87,7 @@
           "IdleInterval": 75.0
         },
         "Models": {
-          "ModelPath": "characters/models/zuidai/zuidai3.vmdl",
-          "CustomKinfeModelPath": ""
+          "ModelPath": "characters/models/zuidai/zuidai3.vmdl"
         },
         "Sounds": {
           "SoundInfect": "han.human.mandeath",
@@ -124,8 +121,7 @@
           "IdleInterval": 75.0
         },
         "Models": {
-          "ModelPath": "characters/models/zuidai/zuidai4.vmdl",
-          "CustomKinfeModelPath": ""
+          "ModelPath": "characters/models/zuidai/zuidai4.vmdl"
         },
         "Sounds": {
           "SoundInfect": "han.human.mandeath",
@@ -159,8 +155,7 @@
           "IdleInterval": 75.0
         },
         "Models": {
-          "ModelPath": "characters/models/flandre_scarlet/flandre_scarlet.vmdl",
-          "CustomKinfeModelPath": ""
+          "ModelPath": "characters/models/flandre_scarlet/flandre_scarlet.vmdl"
         },
         "Sounds": {
           "SoundInfect": "han.human.mandeath",
@@ -194,8 +189,7 @@
           "IdleInterval": 75.0
         },
         "Models": {
-          "ModelPath": "characters/models/remilia_scarlet/remilia_scarlet.vmdl",
-          "CustomKinfeModelPath": ""
+          "ModelPath": "characters/models/remilia_scarlet/remilia_scarlet.vmdl"
         },
         "Sounds": {
           "SoundInfect": "han.human.mandeath",
@@ -229,8 +223,7 @@
           "IdleInterval": 75.0
         },
         "Models": {
-          "ModelPath": "characters/models/zombie_fairy/maid_fairy.vmdl",
-          "CustomKinfeModelPath": ""
+          "ModelPath": "characters/models/zombie_fairy/maid_fairy.vmdl"
         },
         "Sounds": {
           "SoundInfect": "han.human.mandeath",
@@ -264,8 +257,7 @@
           "IdleInterval": 75.0
         },
         "Models": {
-          "ModelPath": "characters/models/zombie_fairy/normal_fairy.vmdl",
-          "CustomKinfeModelPath": ""
+          "ModelPath": "characters/models/zombie_fairy/normal_fairy.vmdl"
         },
         "Sounds": {
           "SoundInfect": "han.human.mandeath",

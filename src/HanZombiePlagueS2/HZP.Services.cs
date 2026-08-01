@@ -26,6 +26,7 @@ public partial class HZPServices
     private readonly IOptionsMonitor<HZPMainCFG> _mainCFG;
     private readonly IOptionsMonitor<HZPZombieClassCFG> _zombieClassCFG;
     private readonly IOptionsMonitor<HZPSpecialClassCFG> _specialClassCFG;
+    private readonly IOptionsMonitor<HZPHumanClassCFG> _humanClassCFG;
     private readonly PlayerZombieState _zombieState;
     private readonly HZPGameMode _gameMode;
 
@@ -36,6 +37,7 @@ public partial class HZPServices
         IOptionsMonitor<HZPZombieClassCFG> zombieClassCFG,
         PlayerZombieState zombieState, HZPGameMode gameMode,
         IOptionsMonitor<HZPSpecialClassCFG> specialClassCFG,
+        IOptionsMonitor<HZPHumanClassCFG> humanClassCFG,
         HanZombiePlagueAPI api)
     {
         _core = core;
@@ -47,6 +49,7 @@ public partial class HZPServices
         _zombieState = zombieState;
         _gameMode = gameMode;
         _specialClassCFG = specialClassCFG;
+        _humanClassCFG = humanClassCFG;
         _api = api;
     }
 
@@ -136,7 +139,6 @@ public partial class HZPServices
                     continue;
 
                 player.SwitchTeam(Team.CT);
-                _helpers.ChangeKnife(player, false, false);
                 _helpers.SetFov(player, 90);
             }
         });
@@ -368,21 +370,17 @@ public partial class HZPServices
             return;
 
         var CFG = _mainCFG.CurrentValue;
+        var humanCFG = _humanClassCFG.CurrentValue;
 
         _helpers.RemoveSZombieClass(Id);
 
         _globals.IsZombie[Id] = false;
         player.SwitchTeam(Team.CT);
-        _helpers.ChangeKnife(player, false, false);
         _helpers.SetFov(player, 90);
         _helpers.ClearPlayerBurn(Id);
         _helpers.ClearFreezeStaten(player);
 
-
-        string Default = "characters/models/ctm_st6/ctm_st6_variante.vmdl";
-        string Custom = string.IsNullOrEmpty(CFG.HumandefaultModel) ? Default : CFG.HumandefaultModel;
-
-        _helpers.SetPlayerModelFixed(pawn, Custom);
+        _helpers.ScheduleApplyHumanModel(player, CFG, humanCFG, 0.05f);
 
         var maxHealth = CFG.HumanMaxHealth;
         pawn.MaxHealth = maxHealth;
@@ -416,10 +414,6 @@ public partial class HZPServices
         _helpers.SetPlayerModelFixed(pawn, zombieClass.Models.ModelPath);
 
         _helpers.DropAllWeapon(zombie);
-
-        string customKnifePath = zombieClass.Models.CustomKinfeModelPath;
-        bool customKnife = !string.IsNullOrEmpty(customKnifePath);
-        _helpers.ChangeKnife(zombie, true, customKnife, customKnifePath);
 
         int zombieHealth = ResolveZombieHealth(zombieClass, isMother);
         pawn.MaxHealth = zombieHealth;

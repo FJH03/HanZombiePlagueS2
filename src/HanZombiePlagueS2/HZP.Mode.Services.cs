@@ -427,7 +427,6 @@ public partial class HZPServices
                 Models = new ZombieModels
                 {
                     ModelPath = MotherZombieClass.Models.ModelPath,
-                    CustomKinfeModelPath = MotherZombieClass.Models.CustomKinfeModelPath
                 },
                 Sounds = new ZombieSounds
                 {
@@ -488,7 +487,6 @@ public partial class HZPServices
                 Models = new ZombieModels
                 {
                     ModelPath = nemesisClass.Models.ModelPath,
-                    CustomKinfeModelPath = nemesisClass.Models.CustomKinfeModelPath
                 },
                 Sounds = new ZombieSounds
                 {
@@ -562,7 +560,6 @@ public partial class HZPServices
                 Models = new ZombieModels
                 {
                     ModelPath = AssassinClass.Models.ModelPath,
-                    CustomKinfeModelPath = AssassinClass.Models.CustomKinfeModelPath
                 },
                 Sounds = new ZombieSounds
                 {

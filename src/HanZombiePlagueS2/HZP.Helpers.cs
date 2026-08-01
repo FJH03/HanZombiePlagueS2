@@ -379,68 +379,6 @@ public partial class HZPHelpers
         pawn.CollisionRulesChanged();
     }
 
-    public void ChangeKnife(IPlayer player, bool isZombie, bool customKnife, string knifepath = "")
-    {
-        if (player == null || !player.IsValid)
-            return;
-
-        var pawn = player.PlayerPawn;
-        if (pawn == null || !pawn.IsValid)
-            return;
-
-        var controller = player.Controller;
-        if (controller == null || !controller.IsValid)
-            return;
-
-        if (controller.LifeState != (byte)LifeState_t.LIFE_ALIVE)
-            return;
-
-        var ws = pawn.WeaponServices;
-        if (ws == null || !ws.IsValid)
-            return;
-
-        ws.DropWeaponBySlot(gear_slot_t.GEAR_SLOT_KNIFE);
-
-        var Is = pawn.ItemServices;
-        if (Is == null || !Is.IsValid)
-            return;
-
-        var weapon = Is.GiveItem<CCSWeaponBase>("weapon_knife");
-        if (weapon == null || !weapon.IsValid)
-            return;
-
-        if (isZombie)
-        {
-            if (customKnife)
-            {
-                weapon.AcceptInput("ChangeSubclass", "42");
-                weapon.AttributeManager.Item.Initialized = true;
-                weapon.AttributeManager.Item.ItemDefinitionIndex = 42;
-                weapon.SetModel(knifepath);
-                weapon.AttributeManager.Item.CustomName = T(player, "ZombieClaw");
-                weapon.AttributeManager.Item.CustomNameOverride = T(player, "ZombieClaw");
-                weapon.AttributeManager.Item.CustomNameUpdated();
-            }
-            else
-            {
-                weapon.AcceptInput("ChangeSubclass", "507");
-                weapon.AttributeManager.Item.Initialized = true;
-                weapon.AttributeManager.Item.ItemDefinitionIndex = 507;
-                weapon.SetModel("");
-                weapon.AttributeManager.Item.CustomName = T(player, "ZombieClaw");
-                weapon.AttributeManager.Item.CustomNameOverride = T(player, "ZombieClaw");
-                weapon.AttributeManager.Item.CustomNameUpdated();
-            }
-        }
-        else
-        {
-            weapon.AcceptInput("ChangeSubclass", "42");
-            weapon.AttributeManager.Item.Initialized = true;
-            weapon.AttributeManager.Item.ItemDefinitionIndex = 42;
-        }
-
-    }
-
     public void SetInvisibility(IPlayer player)
     {
         if (player == null || !player.IsValid)
@@ -1178,6 +1116,132 @@ public partial class HZPHelpers
     {
         _globals.IsNemesis.Remove(playerid);
         _globals.IsAssassin.Remove(playerid);
+    }
+
+    // === 人类模型相关方法 ===
+
+    public List<HZPHumanClassCFG.HumanClass> GetEnabledHumanModels(HZPHumanClassCFG humanCFG)
+    {
+        return humanCFG.HumanClassList
+            .Where(c => c.Enable && !string.IsNullOrWhiteSpace(c.Models.ModelPath))
+            .ToList();
+    }
+
+    public string GetDefaultHumanModelPath(HZPMainCFG cfg)
+    {
+        const string defaultModel = "characters/models/ctm_st6/ctm_st6_variante.vmdl";
+        return string.IsNullOrWhiteSpace(cfg.HumandefaultModel) ? defaultModel : cfg.HumandefaultModel;
+    }
+
+    public string GetHumanModelPathForPlayer(IPlayer player, HZPMainCFG mainCFG, HZPHumanClassCFG humanCFG)
+    {
+        var defaultModel = GetDefaultHumanModelPath(mainCFG);
+        var availableModels = GetEnabledHumanModels(humanCFG);
+
+        if (player == null || !player.IsValid)
+            return defaultModel;
+
+        if (player.IsFakeClient)
+        {
+            var assignedModelName = _zombieState.GetLocalHumanModelPreference(player.PlayerID);
+            var assignedModel = availableModels.FirstOrDefault(c => c.Name == assignedModelName);
+            if (assignedModel != null)
+                return assignedModel.Models.ModelPath;
+
+            // 随机选择
+            var randomModel = availableModels.Count > 0
+                ? availableModels[Random.Shared.Next(availableModels.Count)]
+                : null;
+            if (randomModel != null)
+            {
+                _zombieState.SetLocalHumanModelPreference(player.PlayerID, randomModel.Name);
+                return randomModel.Models.ModelPath;
+            }
+
+            return defaultModel;
+        }
+
+        var preferredModelName = _zombieState.GetPlayerHumanModelPreference(player.PlayerID, player.SteamID);
+        if (string.IsNullOrWhiteSpace(preferredModelName))
+            return defaultModel;
+
+        var selectedModel = availableModels.FirstOrDefault(c => c.Name == preferredModelName);
+        return selectedModel?.Models.ModelPath ?? defaultModel;
+    }
+
+    public void ApplyHumanModel(IPlayer player, HZPMainCFG mainCFG, HZPHumanClassCFG humanCFG)
+    {
+        if (player == null || !player.IsValid)
+            return;
+
+        var pawn = player.PlayerPawn;
+        if (pawn == null || !pawn.IsValid)
+            return;
+
+        var modelPath = GetHumanModelPathForPlayer(player, mainCFG, humanCFG);
+        SetPlayerModelFixed(pawn, modelPath);
+    }
+
+    public void ScheduleApplyHumanModel(IPlayer player, HZPMainCFG mainCFG, HZPHumanClassCFG humanCFG, float delaySeconds = 0.15f)
+    {
+        if (player == null || !player.IsValid)
+            return;
+
+        void ApplyIfStillHuman()
+        {
+            if (player == null || !player.IsValid)
+                return;
+
+            var id = player.PlayerID;
+            _globals.IsZombie.TryGetValue(id, out var isZombie);
+            _globals.IsSurvivor.TryGetValue(id, out var isSurvivor);
+            _globals.IsSniper.TryGetValue(id, out var isSniper);
+            _globals.IsHero.TryGetValue(id, out var isHero);
+
+            if (isZombie || isSurvivor || isSniper || isHero)
+                return;
+
+            _core.Scheduler.NextWorldUpdate(() =>
+            {
+                if (player != null && player.IsValid)
+                {
+                    ApplyHumanModel(player, mainCFG, humanCFG);
+                }
+            });
+        }
+
+        if (delaySeconds <= 0)
+        {
+            ApplyIfStillHuman();
+            return;
+        }
+
+        _core.Scheduler.DelayBySeconds(delaySeconds, ApplyIfStillHuman);
+    }
+
+    public void AssignBotHumanModels(HZPMainCFG mainCFG, HZPHumanClassCFG humanCFG)
+    {
+        var availableModels = GetEnabledHumanModels(humanCFG);
+        if (availableModels.Count == 0)
+            return;
+
+        var bots = _core.PlayerManager.GetAllPlayers()
+            .Where(p => p != null && p.IsValid && p.IsFakeClient)
+            .ToList();
+
+        if (bots.Count == 0)
+            return;
+
+        var shuffledModels = availableModels
+            .OrderBy(_ => Random.Shared.Next())
+            .ToList();
+
+        for (int i = 0; i < bots.Count; i++)
+        {
+            var bot = bots[i];
+            var selectedModel = shuffledModels[i % shuffledModels.Count];
+            _zombieState.SetLocalHumanModelPreference(bot.PlayerID, selectedModel.Name);
+        }
     }
 
     public void SetAllDefaultModel(HZPMainCFG CFG)

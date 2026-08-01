@@ -36,6 +36,7 @@ public partial class HZPEvents
     private readonly IOptionsMonitor<HZPVoxCFG> _voxCFG;
     private readonly IOptionsMonitor<HZPZombieClassCFG> _zombieClassCFG;
     private readonly IOptionsMonitor<HZPSpecialClassCFG> _SpecialClassCFG;
+    private readonly IOptionsMonitor<HZPHumanClassCFG> _humanClassCFG;
     private readonly PlayerZombieState _zombieState;
     private readonly HZPGameMode _gameMode;
 
@@ -47,6 +48,7 @@ public partial class HZPEvents
         IOptionsMonitor<HZPZombieClassCFG> zombieClassCFG,
         PlayerZombieState zombieState, HZPGameMode gameMode,
         IOptionsMonitor<HZPSpecialClassCFG> specialClassCFG,
+        IOptionsMonitor<HZPHumanClassCFG> humanClassCFG,
         HanZombiePlagueAPI api)
     {
         _core = core;
@@ -61,6 +63,7 @@ public partial class HZPEvents
         _zombieState = zombieState;
         _gameMode = gameMode;
         _SpecialClassCFG = specialClassCFG;
+        _humanClassCFG = humanClassCFG;
         _api = api;
     }
 
@@ -156,6 +159,8 @@ public partial class HZPEvents
 
             
 
+            var humanCFG = _humanClassCFG.CurrentValue;
+            _helpers.AssignBotHumanModels(CFG, humanCFG);
             _helpers.SetAllDefaultModel(CFG);
             int roundGeneration = _helpers.GetCurrentRoundGeneration();
 
@@ -344,10 +349,7 @@ public partial class HZPEvents
             {
                 @event.AddItem(models.Models.ModelPath);
             }
-            if (!string.IsNullOrEmpty(models.Models.CustomKinfeModelPath))
-            {
-                @event.AddItem(models.Models.CustomKinfeModelPath);
-            }
+
         }
 
         var Survivormodel = CFG.Survivor.ModelsPath;
@@ -370,6 +372,16 @@ public partial class HZPEvents
         if (!string.IsNullOrEmpty(HumanDefaultModel))
         {
             @event.AddItem(HumanDefaultModel);
+        }
+
+        // 预缓存人类职业模型
+        var humanConfig = _humanClassCFG.CurrentValue;
+        foreach (var humanClass in humanConfig.HumanClassList)
+        {
+            if (!humanClass.Enable)
+                continue;
+            if (!string.IsNullOrEmpty(humanClass.Models.ModelPath))
+                @event.AddItem(humanClass.Models.ModelPath);
         }
 
         var SpecialzombieConfig = _SpecialClassCFG.CurrentValue;
@@ -395,10 +407,7 @@ public partial class HZPEvents
             {
                 @event.AddItem(Specialmodels.Models.ModelPath);
             }
-            if (!string.IsNullOrEmpty(Specialmodels.Models.CustomKinfeModelPath))
-            {
-                @event.AddItem(Specialmodels.Models.CustomKinfeModelPath);
-            }
+
         }
 
 
@@ -495,20 +504,13 @@ public partial class HZPEvents
             else
             {
                 var CFG = _mainCFG.CurrentValue;
+                var humanCFG = _humanClassCFG.CurrentValue;
                 _helpers.RunNextWorldUpdateForPlayer(Id, sessionId, roundGeneration, (currentPlayer, currentPawn) =>
                 {
-                    currentPawn.MaxHealth = CFG.HumanMaxHealth;
-                    currentPawn.MaxHealthUpdated();
-                    currentPawn.Health = CFG.HumanMaxHealth;
-                    currentPawn.HealthUpdated();
+                    _helpers.ScheduleApplyHumanModel(currentPlayer, CFG, humanCFG, 0.15f);
 
                     currentPawn.ActualGravityScale = CFG.HumanInitialGravity;
-                    currentPawn.VelocityModifier = CFG.HumanInitialSpeed;
-                    currentPawn.VelocityModifierUpdated();
 
-                    _helpers.ChangeKnife(currentPlayer, false, false);
-                    _helpers.SetFov(currentPlayer, 90);
-                    _helpers.ClearFreezeStaten(currentPlayer);
                     _service.GiveSpawnGrenade(currentPlayer, CFG);
                 }, requireAlive: true);
 

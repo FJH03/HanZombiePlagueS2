@@ -24,7 +24,7 @@ public class HZPZombieClassCFG
     public class ZombieModels
     {
         public string ModelPath { get; set; } = string.Empty;
-        public string CustomKinfeModelPath { get; set; } = string.Empty;
+
     }
 
     // 丧尸音效

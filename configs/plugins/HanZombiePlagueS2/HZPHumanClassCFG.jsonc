@@ -17,7 +17,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/bacopa/bacopa.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -40,7 +39,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/bacopa/swim/swim.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -63,7 +61,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/marisa/marisa.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -86,7 +83,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/elaina/elaina.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -109,7 +105,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/sakura_chiyono/sakura_chiyono.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -132,7 +127,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/zaolaiyouxiang/zaolaiyouxiang.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -155,7 +149,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/reimu/cloth1.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -178,7 +171,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/reimu/cloth2.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -201,7 +193,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/reimu/cloth3.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -224,7 +215,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/reimu/cloth4.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -247,7 +237,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/hoshino/hoshino.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -270,7 +259,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/xingye/xingye.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -293,7 +281,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/youniaoxia/youniaoxia.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -316,7 +303,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/allen/allen.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -339,7 +325,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/amamiya_kokoro/amamiya_kokoro_cloth1_nohitbox.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -362,7 +347,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/amamiya_kokoro/amamiya_kokoro_cloth2_nohitbox.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -385,7 +369,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/kyouka/kyouka.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -408,7 +391,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/laffey/laffey.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -431,7 +413,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/alice/alice.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -454,7 +435,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/alice_note/alice.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -477,7 +457,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/miku/miku.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -500,7 +479,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/miku/miku2.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -523,7 +501,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/miku/miku3.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -546,7 +523,6 @@
         },
         "Models": {
           "ModelPath": "characters/models/g11/g11.vmdl",
-          "CustomKnifeModelPath": ""
         },
         "Weapon": {
           "PrimaryWeapon": "",
