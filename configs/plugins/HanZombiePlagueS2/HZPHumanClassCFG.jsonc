@@ -16,7 +16,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/bacopa/bacopa.vmdl",
+          "ModelPath": "characters/models/bacopa/bacopa.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -38,7 +38,29 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/bacopa/swim/swim.vmdl",
+          "ModelPath": "characters/models/bacopa/swim/swim.vmdl"
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "芙兰朵露·斯卡雷特(MIY式)",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/flandre_scarlet/miy/miy.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -60,7 +82,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/marisa/marisa.vmdl",
+          "ModelPath": "characters/models/marisa/marisa.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -82,7 +104,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/elaina/elaina.vmdl",
+          "ModelPath": "characters/models/elaina/elaina.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -104,7 +126,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/sakura_chiyono/sakura_chiyono.vmdl",
+          "ModelPath": "characters/models/sakura_chiyono/sakura_chiyono.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -126,7 +148,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/zaolaiyouxiang/zaolaiyouxiang.vmdl",
+          "ModelPath": "characters/models/zaolaiyouxiang/zaolaiyouxiang.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -148,7 +170,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/reimu/cloth1.vmdl",
+          "ModelPath": "characters/models/reimu/cloth1.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -170,7 +192,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/reimu/cloth2.vmdl",
+          "ModelPath": "characters/models/reimu/cloth2.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -192,7 +214,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/reimu/cloth3.vmdl",
+          "ModelPath": "characters/models/reimu/cloth3.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -214,7 +236,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/reimu/cloth4.vmdl",
+          "ModelPath": "characters/models/reimu/cloth4.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -236,7 +258,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/hoshino/hoshino.vmdl",
+          "ModelPath": "characters/models/hoshino/hoshino.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -258,7 +280,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/xingye/xingye.vmdl",
+          "ModelPath": "characters/models/xingye/xingye.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -280,7 +302,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/youniaoxia/youniaoxia.vmdl",
+          "ModelPath": "characters/models/youniaoxia/youniaoxia.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -302,7 +324,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/allen/allen.vmdl",
+          "ModelPath": "characters/models/allen/allen.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -324,7 +346,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/amamiya_kokoro/amamiya_kokoro_cloth1_nohitbox.vmdl",
+          "ModelPath": "characters/models/amamiya_kokoro/amamiya_kokoro_cloth1_nohitbox.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -346,7 +368,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/amamiya_kokoro/amamiya_kokoro_cloth2_nohitbox.vmdl",
+          "ModelPath": "characters/models/amamiya_kokoro/amamiya_kokoro_cloth2_nohitbox.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -368,7 +390,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/kyouka/kyouka.vmdl",
+          "ModelPath": "characters/models/kyouka/kyouka.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -390,7 +412,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/laffey/laffey.vmdl",
+          "ModelPath": "characters/models/laffey/laffey.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -412,7 +434,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/alice/alice.vmdl",
+          "ModelPath": "characters/models/alice/alice.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -434,7 +456,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/alice_note/alice.vmdl",
+          "ModelPath": "characters/models/alice_note/alice.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -456,7 +478,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/miku/miku.vmdl",
+          "ModelPath": "characters/models/miku/miku.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -478,7 +500,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/miku/miku2.vmdl",
+          "ModelPath": "characters/models/miku/miku2.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -500,7 +522,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/miku/miku3.vmdl",
+          "ModelPath": "characters/models/miku/miku3.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -522,7 +544,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/g11/g11.vmdl",
+          "ModelPath": "characters/models/g11/g11.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
