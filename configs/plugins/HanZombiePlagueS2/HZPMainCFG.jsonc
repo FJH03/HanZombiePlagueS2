@@ -116,7 +116,7 @@
 		"EnableInfiniteClipMode": false,
 		"ZombieCanReborn": true
 	},
-	"HumandefaultModel": "characters/models/bacopa/swim/swim.vmdl",
+	"HumandefaultModel": "characters/models/cirno/cirno.vmdl",
 	"HumanMaxHealth": 225,
 	"HumanInitialSpeed": 1.0,
 	"HumanInitialGravity": 0.8,
