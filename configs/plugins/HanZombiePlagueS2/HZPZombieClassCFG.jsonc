@@ -4,7 +4,7 @@
       {
         "Name": "罪袋",
         "Enable": true,
-        "PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
         "Stats": {
           "Health": 850,
           "MotherZombieHealth": 1900,
@@ -22,23 +22,23 @@
           "ModelPath": "characters/models/zuidai/zuidai.vmdl"
         },
         "Sounds": {
-          "SoundInfect": "han.human.mandeath",
-          "SoundPain": "han.hl.zombie.pain",
-          "SoundHurt": "han.zombie.manclassic_hurt",
-          "SoundDeath": "han.zombie.manclassic_death",
-          "IdleSound": "han.hl.nihilanth.idle,han.hl.nihilanth.idleb,han.hl.nihilanth.idlec",
-          "RegenSound": "han.zombie.state.manheal",
-          "BurnSound": "han.zombieplague.zburn",
-          "ExplodeSound": "han.hl.zombie.idle",
-          "HitSound": "han.zombie.classic_hit",
-          "HitWallSound": "han.zombie.classic_hitwall",
-          "SwingSound": "han.zombie.classic_swing"
+          "SoundInfect": "zombie.skill.specialspawn",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
         }
       },
 	    {
         "Name": "罪袋2",
         "Enable": true,
-        "PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
         "Stats": {
           "Health": 850,
           "MotherZombieHealth": 1900,
@@ -56,23 +56,23 @@
           "ModelPath": "characters/models/zuidai/zuidai2.vmdl"
         },
         "Sounds": {
-          "SoundInfect": "han.human.mandeath",
-          "SoundPain": "han.hl.zombie.pain",
-          "SoundHurt": "han.zombie.manclassic_hurt",
-          "SoundDeath": "han.zombie.manclassic_death",
-          "IdleSound": "han.hl.nihilanth.idle,han.hl.nihilanth.idleb,han.hl.nihilanth.idlec",
-          "RegenSound": "han.zombie.state.manheal",
-          "BurnSound": "han.zombieplague.zburn",
-          "ExplodeSound": "han.hl.zombie.idle",
-          "HitSound": "han.zombie.classic_hit",
-          "HitWallSound": "han.zombie.classic_hitwall",
-          "SwingSound": "han.zombie.classic_swing"
+          "SoundInfect": "zombie.skill.specialspawn",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
         }
       },
 	    {
         "Name": "罪袋3",
         "Enable": true,
-        "PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
         "Stats": {
           "Health": 900,
           "MotherZombieHealth": 1900,
@@ -90,23 +90,23 @@
           "ModelPath": "characters/models/zuidai/zuidai3.vmdl"
         },
         "Sounds": {
-          "SoundInfect": "han.human.mandeath",
-          "SoundPain": "han.hl.zombie.pain",
-          "SoundHurt": "han.zombie.manclassic_hurt",
-          "SoundDeath": "han.zombie.manclassic_death",
-          "IdleSound": "han.hl.nihilanth.idle,han.hl.nihilanth.idleb,han.hl.nihilanth.idlec",
-          "RegenSound": "han.zombie.state.manheal",
-          "BurnSound": "han.zombieplague.zburn",
-          "ExplodeSound": "han.hl.zombie.idle",
-          "HitSound": "han.zombie.classic_hit",
-          "HitWallSound": "han.zombie.classic_hitwall",
-          "SwingSound": "han.zombie.classic_swing"
+          "SoundInfect": "zombie.skill.specialspawn",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
         }
       },
 	    {
         "Name": "罪袋4",
         "Enable": true,
-        "PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
         "Stats": {
           "Health": 1000,
           "MotherZombieHealth": 1900,
@@ -124,23 +124,23 @@
           "ModelPath": "characters/models/zuidai/zuidai4.vmdl"
         },
         "Sounds": {
-          "SoundInfect": "han.human.mandeath",
-          "SoundPain": "han.hl.zombie.pain",
-          "SoundHurt": "han.zombie.manclassic_hurt",
-          "SoundDeath": "han.zombie.manclassic_death",
-          "IdleSound": "han.hl.nihilanth.idle,han.hl.nihilanth.idleb,han.hl.nihilanth.idlec",
-          "RegenSound": "han.zombie.state.manheal",
-          "BurnSound": "han.zombieplague.zburn",
-          "ExplodeSound": "han.hl.zombie.idle",
-          "HitSound": "han.zombie.classic_hit",
-          "HitWallSound": "han.zombie.classic_hitwall",
-          "SwingSound": "han.zombie.classic_swing"
+          "SoundInfect": "zombie.skill.specialspawn",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
         }
       },
 	    {
         "Name": "芙兰朵露·斯卡雷特",
         "Enable": true,
-        "PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
         "Stats": {
           "Health": 1000,
           "MotherZombieHealth": 1900,
@@ -158,23 +158,23 @@
           "ModelPath": "characters/models/flandre_scarlet/flandre_scarlet.vmdl"
         },
         "Sounds": {
-          "SoundInfect": "han.human.mandeath",
-          "SoundPain": "han.hl.zombie.pain",
-          "SoundHurt": "han.zombie.manclassic_hurt",
-          "SoundDeath": "han.zombie.manclassic_death",
-          "IdleSound": "han.hl.nihilanth.idle,han.hl.nihilanth.idleb,han.hl.nihilanth.idlec",
-          "RegenSound": "han.zombie.state.manheal",
-          "BurnSound": "han.zombieplague.zburn",
-          "ExplodeSound": "han.hl.zombie.idle",
-          "HitSound": "han.zombie.classic_hit",
-          "HitWallSound": "han.zombie.classic_hitwall",
-          "SwingSound": "han.zombie.classic_swing"
+          "SoundInfect": "zr.amb.cuteinfect",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
         }
       },
       {
         "Name": "蕾米莉亚·斯卡雷特",
         "Enable": true,
-        "PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
         "Stats": {
           "Health": 1000,
           "MotherZombieHealth": 1900,
@@ -192,23 +192,23 @@
           "ModelPath": "characters/models/remilia_scarlet/remilia_scarlet.vmdl"
         },
         "Sounds": {
-          "SoundInfect": "han.human.mandeath",
-          "SoundPain": "han.hl.zombie.pain",
-          "SoundHurt": "han.zombie.manclassic_hurt",
-          "SoundDeath": "han.zombie.manclassic_death",
-          "IdleSound": "han.hl.nihilanth.idle,han.hl.nihilanth.idleb,han.hl.nihilanth.idlec",
-          "RegenSound": "han.zombie.state.manheal",
-          "BurnSound": "han.zombieplague.zburn",
-          "ExplodeSound": "han.hl.zombie.idle",
-          "HitSound": "han.zombie.classic_hit",
-          "HitWallSound": "han.zombie.classic_hitwall",
-          "SwingSound": "han.zombie.classic_swing"
+          "SoundInfect": "zr.amb.cuteinfect",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
         }
       },
       {
         "Name": "女仆妖精",
         "Enable": true,
-        "PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
         "Stats": {
           "Health": 1000,
           "MotherZombieHealth": 1900,
@@ -226,23 +226,23 @@
           "ModelPath": "characters/models/zombie_fairy/maid_fairy.vmdl"
         },
         "Sounds": {
-          "SoundInfect": "han.human.mandeath",
-          "SoundPain": "han.hl.zombie.pain",
-          "SoundHurt": "han.zombie.manclassic_hurt",
-          "SoundDeath": "han.zombie.manclassic_death",
-          "IdleSound": "han.hl.nihilanth.idle,han.hl.nihilanth.idleb,han.hl.nihilanth.idlec",
-          "RegenSound": "han.zombie.state.manheal",
-          "BurnSound": "han.zombieplague.zburn",
-          "ExplodeSound": "han.hl.zombie.idle",
-          "HitSound": "han.zombie.classic_hit",
-          "HitWallSound": "han.zombie.classic_hitwall",
-          "SwingSound": "han.zombie.classic_swing"
+          "SoundInfect": "zr.amb.cuteinfect",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
         }
       },
       {
         "Name": "妖精",
         "Enable": true,
-        "PrecacheSoundEvent": "soundevents/hanhl1zombies.vsndevts",
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
         "Stats": {
           "Health": 1000,
           "MotherZombieHealth": 1900,
@@ -260,17 +260,17 @@
           "ModelPath": "characters/models/zombie_fairy/normal_fairy.vmdl"
         },
         "Sounds": {
-          "SoundInfect": "han.human.mandeath",
-          "SoundPain": "han.hl.zombie.pain",
-          "SoundHurt": "han.zombie.manclassic_hurt",
-          "SoundDeath": "han.zombie.manclassic_death",
-          "IdleSound": "han.hl.nihilanth.idle,han.hl.nihilanth.idleb,han.hl.nihilanth.idlec",
-          "RegenSound": "han.zombie.state.manheal",
-          "BurnSound": "han.zombieplague.zburn",
-          "ExplodeSound": "han.hl.zombie.idle",
-          "HitSound": "han.zombie.classic_hit",
-          "HitWallSound": "han.zombie.classic_hitwall",
-          "SwingSound": "han.zombie.classic_swing"
+          "SoundInfect": "zr.amb.cuteinfect",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
         }
       }
     ]

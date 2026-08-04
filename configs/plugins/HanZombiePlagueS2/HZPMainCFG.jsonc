@@ -10,7 +10,7 @@
 		"MotherZombieCount": 1,
 		"Weight": 70,
 		"EnableInfiniteClipMode": false,
-		"ZombieCanReborn": false
+		"ZombieCanReborn": true
 	},
 	"MultiInfection": 
 	{
