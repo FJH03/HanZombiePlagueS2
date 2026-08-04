@@ -415,6 +415,10 @@ public partial class HZPServices
 
         _helpers.DropAllWeapon(zombie);
 
+        // 移除僵尸的护甲
+        pawn.ArmorValue = 0;
+        pawn.ArmorValueUpdated();
+
         int zombieHealth = ResolveZombieHealth(zombieClass, isMother);
         pawn.MaxHealth = zombieHealth;
         pawn.MaxHealthUpdated();
