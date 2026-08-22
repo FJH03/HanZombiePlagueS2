@@ -462,6 +462,33 @@ public class HZPAdminItemMenu
 
         menu.AddOption(IncGrenadeButton);
 
+        string MolotovButtonText = _helpers.T(player, "ItemMolotov");
+        var MolotovButton = new ButtonMenuOption(MolotovButtonText)
+        {
+            TextStyle = MenuOptionTextStyle.ScrollLeftLoop,
+            CloseAfterClick = true
+        };
+        MolotovButton.Tag = "extend";
+
+        MolotovButton.Click += async (_, args) =>
+        {
+            RunMenuAction(args.Player, clicker =>
+            {
+                var Id = clicker.PlayerID;
+                _globals.IsZombie.TryGetValue(Id, out bool IsZombie);
+                if (IsZombie)
+                {
+                    clicker.SendMessage(MessageType.Chat, _helpers.T(clicker, "ItemZombieCantUse"));
+                    return;
+                }
+
+                _helpers.GiveMolotov(clicker);
+                clicker.SendMessage(MessageType.Chat, _helpers.T(clicker, "ItemMolotovSuccess"));
+            });
+        };
+
+        menu.AddOption(MolotovButton);
+
         _core.MenusAPI.OpenMenuForPlayer(player, menu);
         return menu;
     }

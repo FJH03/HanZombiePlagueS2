@@ -493,6 +493,42 @@ public partial class HZPHelpers
         grenade.AttributeManager.Item.CustomNameUpdated();
     }
 
+    public void GiveMolotov(IPlayer player)
+    {
+        if (player == null || !player.IsValid)
+            return;
+
+        var Id = player.PlayerID;
+
+        _globals.IsZombie.TryGetValue(Id, out bool IsZombie);
+        if (IsZombie)
+            return;
+
+        var pawn = player.PlayerPawn;
+        if (pawn == null || !pawn.IsValid)
+            return;
+
+        if (pawn.LifeState != (byte)LifeState_t.LIFE_ALIVE)
+            return;
+
+        var Is = pawn.ItemServices;
+        if (Is == null || !Is.IsValid)
+            return;
+
+        // 感染模式人类是 CT、僵尸是 T，人类需要能买到燃烧瓶，统一给 weapon_molotov
+        var grenade = Is.GiveItem<CCSWeaponBase>("weapon_molotov");
+        if (grenade == null || !grenade.IsValid)
+            return;
+
+        // 打上 human_ 前缀 CustomName，绕过 Event_OnWeaponServicesCanUseHook 对原生手雷的拦截
+        const string customName = "human_molotov";
+        grenade.Entity!.Name = customName;
+        grenade.AttributeManager.Item.Initialized = true;
+        grenade.AttributeManager.Item.CustomName = customName;
+        grenade.AttributeManager.Item.CustomNameOverride = customName;
+        grenade.AttributeManager.Item.CustomNameUpdated();
+    }
+
 
 
 }

@@ -79,6 +79,8 @@
     "ItemTeleportGrenadeSuccess": "You obtained a Teleport Grenade!!",
     "ItemIncGrenade": "Obtain Fire Grenade",
     "ItemIncGrenadeSuccess": "You obtained a Fire Grenade!!",
+    "ItemMolotov": "Obtain Molotov",
+    "ItemMolotovSuccess": "You obtained a Molotov!!",
     "HudZombieClass": "Zombie Class：",
     "HudPlayerName": "Player Name：",
     "HudCause": "Cause",

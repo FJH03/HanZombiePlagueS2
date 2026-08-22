@@ -10,7 +10,7 @@
         "dependencies": {
           "HanZombiePlagueAPI": "1.0.0",
           "Microsoft.Extensions.Options.DataAnnotations": "8.0.0",
-          "SwiftlyS2.CS2": "1.4.3",
+          "SwiftlyS2.CS2": "1.4.4",
           "HanZombiePlagueAPI.Reference": "1.0.0.0"
         },
         "runtime": {
@@ -488,7 +488,7 @@
           }
         }
       },
-      "SwiftlyS2.CS2/1.4.3": {
+      "SwiftlyS2.CS2/1.4.4": {
         "dependencies": {
           "Dapper": "2.1.66",
           "McMaster.NETCore.Plugins": "2.0.0",
@@ -511,8 +511,8 @@
         },
         "runtime": {
           "lib/net10.0/SwiftlyS2.CS2.dll": {
-            "assemblyVersion": "1.4.3.0",
-            "fileVersion": "1.4.3.0"
+            "assemblyVersion": "1.4.4.0",
+            "fileVersion": "1.4.4.0"
           }
         }
       },
@@ -566,7 +566,7 @@
       "HanZombiePlagueAPI/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Options.DataAnnotations": "8.0.0",
-          "SwiftlyS2.CS2": "1.4.3"
+          "SwiftlyS2.CS2": "1.4.4"
         },
         "runtime": {
           "HanZombiePlagueAPI.dll": {
@@ -842,12 +842,12 @@
       "path": "stub.system.data.sqlite.core.netstandard/1.0.119",
       "hashPath": "stub.system.data.sqlite.core.netstandard.1.0.119.nupkg.sha512"
     },
-    "SwiftlyS2.CS2/1.4.3": {
+    "SwiftlyS2.CS2/1.4.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-oM8WNZbC55rPq2iclQagikwTBwc54BKWVy6nWo1W7sgcudX+Ad9C11lITpxB6dkfeE/4hIC1ZP61V4foWvT3VQ==",
-      "path": "swiftlys2.cs2/1.4.3",
-      "hashPath": "swiftlys2.cs2.1.4.3.nupkg.sha512"
+      "sha512": "sha512-BbMyV2AO1Tl2FNsN4pfnDDoyabS/p9jRtbyS0amo+HM1ryY7+MiUeTMn4ka4K6bJ6C2gDu1XHrUgpLMfskpCkw==",
+      "path": "swiftlys2.cs2/1.4.4",
+      "hashPath": "swiftlys2.cs2.1.4.4.nupkg.sha512"
     },
     "System.Data.SQLite.Core/1.0.119": {
       "type": "package",

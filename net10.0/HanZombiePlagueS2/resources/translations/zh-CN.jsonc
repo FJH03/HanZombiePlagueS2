@@ -79,6 +79,8 @@
     "ItemTeleportGrenadeSuccess": "你获得了一枚传送手雷!!",
     "ItemIncGrenade": "获取火焰弹",
     "ItemIncGrenadeSuccess": "你获得了一枚火焰弹!!",
+    "ItemMolotov": "获取燃烧瓶",
+    "ItemMolotovSuccess": "你获得了一枚燃烧瓶!!",
     "HudZombieClass": "丧尸职业：",
     "HudPlayerName": "玩家名称：",
     "HudCause": "造成",
