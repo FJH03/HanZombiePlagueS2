@@ -137,6 +137,108 @@
           "SwingSound": ""
         }
       },
+      {
+        "Name": "奥尔加·伊兹卡",
+        "Enable": true,
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
+        "Stats": {
+          "Health": 1000,
+          "MotherZombieHealth": 1900,
+          "Speed": 1.0,
+          "Damage": 55.0,
+          "Gravity": 0.82,
+          "Fov": 108,
+          "EnableRegen": true,
+          "HpRegenSec": 5.0,
+          "HpRegenHp": 35,
+          "ZombieSoundVolume": 0.4,
+          "IdleInterval": 75.0
+        },
+        "Models": {
+          "ModelPath": "characters/models/olga/olga.vmdl"
+        },
+        "Sounds": {
+          "SoundInfect": "zombie.skill.specialspawn",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
+        }
+      },
+      {
+        "Name": "算命先生",
+        "Enable": true,
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
+        "Stats": {
+          "Health": 1000,
+          "MotherZombieHealth": 1900,
+          "Speed": 1.0,
+          "Damage": 55.0,
+          "Gravity": 0.82,
+          "Fov": 108,
+          "EnableRegen": true,
+          "HpRegenSec": 5.0,
+          "HpRegenHp": 35,
+          "ZombieSoundVolume": 0.4,
+          "IdleInterval": 75.0
+        },
+        "Models": {
+          "ModelPath": "characters/models/fortune_teller/fortune_teller.vmdl"
+        },
+        "Sounds": {
+          "SoundInfect": "zombie.skill.specialspawn",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
+        }
+      },
+      {
+        "Name": "卡比",
+        "Enable": true,
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
+        "Stats": {
+          "Health": 1000,
+          "MotherZombieHealth": 1900,
+          "Speed": 1.0,
+          "Damage": 55.0,
+          "Gravity": 0.82,
+          "Fov": 108,
+          "EnableRegen": true,
+          "HpRegenSec": 5.0,
+          "HpRegenHp": 35,
+          "ZombieSoundVolume": 0.4,
+          "IdleInterval": 75.0
+        },
+        "Models": {
+          "ModelPath": "characters/models/kirby/kirby.vmdl"
+        },
+        "Sounds": {
+          "SoundInfect": "zombie.skill.specialspawn",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
+        }
+      },
 	    {
         "Name": "芙兰朵露·斯卡雷特",
         "Enable": true,
@@ -224,6 +326,176 @@
         },
         "Models": {
           "ModelPath": "characters/models/zombie_fairy/maid_fairy.vmdl"
+        },
+        "Sounds": {
+          "SoundInfect": "zr.amb.cuteinfect",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
+        }
+      },
+      {
+        "Name": "太阳花妖精",
+        "Enable": true,
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
+        "Stats": {
+          "Health": 1000,
+          "MotherZombieHealth": 1900,
+          "Speed": 1.0,
+          "Damage": 55.0,
+          "Gravity": 0.82,
+          "Fov": 108,
+          "EnableRegen": true,
+          "HpRegenSec": 5.0,
+          "HpRegenHp": 35,
+          "ZombieSoundVolume": 0.4,
+          "IdleInterval": 75.0
+        },
+        "Models": {
+          "ModelPath": "characters/models/sunflower_fairy/sunflower_fairy.vmdl"
+        },
+        "Sounds": {
+          "SoundInfect": "zr.amb.cuteinfect",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
+        }
+      },
+      {
+        "Name": "克劳恩皮丝",
+        "Enable": true,
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
+        "Stats": {
+          "Health": 1000,
+          "MotherZombieHealth": 1900,
+          "Speed": 1.0,
+          "Damage": 55.0,
+          "Gravity": 0.82,
+          "Fov": 108,
+          "EnableRegen": true,
+          "HpRegenSec": 5.0,
+          "HpRegenHp": 35,
+          "ZombieSoundVolume": 0.4,
+          "IdleInterval": 75.0
+        },
+        "Models": {
+          "ModelPath": "characters/models/clown_piece/clown_piece.vmdl"
+        },
+        "Sounds": {
+          "SoundInfect": "zr.amb.cuteinfect",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
+        }
+      },
+      {
+        "Name": "爱塔妮缇·拉尔瓦",
+        "Enable": true,
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
+        "Stats": {
+          "Health": 1000,
+          "MotherZombieHealth": 1900,
+          "Speed": 1.0,
+          "Damage": 55.0,
+          "Gravity": 0.82,
+          "Fov": 108,
+          "EnableRegen": true,
+          "HpRegenSec": 5.0,
+          "HpRegenHp": 35,
+          "ZombieSoundVolume": 0.4,
+          "IdleInterval": 75.0
+        },
+        "Models": {
+          "ModelPath": "characters/models/eternity_larva/eternity_larva.vmdl"
+        },
+        "Sounds": {
+          "SoundInfect": "zr.amb.cuteinfect",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
+        }
+      },
+      {
+        "Name": "炽天使",
+        "Enable": true,
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
+        "Stats": {
+          "Health": 1000,
+          "MotherZombieHealth": 1900,
+          "Speed": 1.0,
+          "Damage": 55.0,
+          "Gravity": 0.82,
+          "Fov": 108,
+          "EnableRegen": true,
+          "HpRegenSec": 5.0,
+          "HpRegenHp": 35,
+          "ZombieSoundVolume": 0.4,
+          "IdleInterval": 75.0
+        },
+        "Models": {
+          "ModelPath": "characters/models/lily/cloth2.vmdl"
+        },
+        "Sounds": {
+          "SoundInfect": "zr.amb.cuteinfect",
+          "SoundPain": "zedsfx.amb.bulletheadshot",
+			    "SoundHurt": "zedsfx.amb.bullethit",
+			    "SoundDeath": "zedsfx.amb.killshot",
+          "IdleSound": "",
+          "RegenSound": "",
+          "BurnSound": "",
+          "ExplodeSound": "",
+          "HitSound": "zombie.skill.massacre_hit",
+          "HitWallSound": "zombie.skill.predator_slash",
+          "SwingSound": ""
+        }
+      },
+      {
+        "Name": "神绮",
+        "Enable": true,
+        "PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
+        "Stats": {
+          "Health": 1000,
+          "MotherZombieHealth": 1900,
+          "Speed": 1.0,
+          "Damage": 55.0,
+          "Gravity": 0.82,
+          "Fov": 108,
+          "EnableRegen": true,
+          "HpRegenSec": 5.0,
+          "HpRegenHp": 35,
+          "ZombieSoundVolume": 0.4,
+          "IdleInterval": 75.0
+        },
+        "Models": {
+          "ModelPath": "characters/models/shinki/shinki.vmdl"
         },
         "Sounds": {
           "SoundInfect": "zr.amb.cuteinfect",

@@ -24,7 +24,7 @@
         }
       },
       {
-        "Name": "百可花-泳装",
+        "Name": "古明地恋",
         "Enable": true,
         "Stats": {
           "Health": 225,
@@ -38,7 +38,51 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/bacopa/swim/swim.vmdl"
+          "ModelPath": "characters/models/koishi/koishi.vmdl"
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "圣园未花",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/mika/mika.vmdl"
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "光天使",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/lily/cloth1.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
@@ -82,7 +126,7 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/marisa/marisa.vmdl"
+          "ModelPath": "characters/models/marisa/miy/miy.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
