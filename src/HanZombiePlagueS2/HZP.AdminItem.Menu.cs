@@ -19,18 +19,21 @@ public class HZPAdminItemMenu
     private readonly ISwiftlyCore _core;
     private readonly HZPMenuHelper _menuhelper;
     private readonly IOptionsMonitor<HZPMainCFG> _mainCFG;
+    private readonly IOptionsMonitor<HZPHumanClassCFG> _humanClassCFG;
     private readonly HZPHelpers _helpers;
     private readonly HZPServices _services;
     private readonly HZPGlobals _globals;
 
     public HZPAdminItemMenu(ISwiftlyCore core, ILogger<HZPAdminItemMenu> logger,
         HZPMenuHelper menuHelper, IOptionsMonitor<HZPMainCFG> mainCFG,
+        IOptionsMonitor<HZPHumanClassCFG> humanClassCFG,
         HZPHelpers helpers, HZPServices service, HZPGlobals globals)
     {
         _core = core;
         _logger = logger;
         _menuhelper = menuHelper;
         _mainCFG = mainCFG;
+        _humanClassCFG = humanClassCFG;
         _helpers = helpers;
         _services = service;
         _globals = globals;
@@ -100,10 +103,10 @@ public class HZPAdminItemMenu
                     maxHealth = CFG.HumanMaxHealth;
                 }
 
-                string Default = "characters/models/ctm_st6/ctm_st6_variante.vmdl";
-                string Custom = string.IsNullOrEmpty(CFG.HumandefaultModel) ? Default : CFG.HumandefaultModel;
+                var humanCFG = _humanClassCFG.CurrentValue;
+                string modelPath = _helpers.GetHumanModelPathForPlayer(clicker, CFG, humanCFG);
 
-                _helpers.TVaccine(clicker, maxHealth, CFG.HumanInitialSpeed, Custom, CFG.TVaccineSound, 1.0f);
+                _helpers.TVaccine(clicker, maxHealth, CFG.HumanInitialSpeed, modelPath, CFG.TVaccineSound, 1.0f);
                 clicker.SendMessage(MessageType.Chat, _helpers.T(clicker, "ItemTVaccineSuccess"));
                 _core.PlayerManager.SendMessage(MessageType.Chat, _helpers.T(clicker, "ItemTVaccineSuccessToAll", clicker.Name));
             });

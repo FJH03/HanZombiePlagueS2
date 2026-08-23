@@ -7,8 +7,8 @@
 			"PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
 			"Stats": 
 			{
-				  "Health": 2200,
-				  "MotherZombieHealth": 2800,
+				  "Health": 2000,
+				  "MotherZombieHealth": 2500,
 				  "Speed": 1.08,
 				  "Damage": 120.0,
 				  "Gravity": 0.85,
@@ -44,8 +44,8 @@
 			"PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
 			"Stats": 
 			{
-				  "Health": 6500,
-				  "MotherZombieHealth": 8000,
+				  "Health": 5500,
+				  "MotherZombieHealth":6500,
 				  "Speed": 1.16,
 				  "Damage": 260.0,
 				  "Gravity": 0.9,
@@ -81,8 +81,8 @@
 			"PrecacheSoundEvent": "soundevents/soundevents_zed.vsndevts",
 			"Stats": 
 			{
-				  "Health": 1400,
-				  "MotherZombieHealth": 1800,
+				  "Health": 3000,
+				  "MotherZombieHealth": 4000,
 				  "Speed": 1.28,
 				  "Damage": 95.0,
 				  "Gravity": 0.72,

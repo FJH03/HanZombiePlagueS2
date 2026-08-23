@@ -26,6 +26,7 @@ public partial class HanZombiePlagueAPI : IHanZombiePlagueAPI, IDisposable
     private IOptionsMonitor<HZPMainCFG> _mainCFG = null!;
     private IOptionsMonitor<HZPZombieClassCFG> _zombieClassCFG = null!;
     private IOptionsMonitor<HZPSpecialClassCFG> _specialClassCFG = null!;
+    private IOptionsMonitor<HZPHumanClassCFG> _humanClassCFG = null!;
     private HZPGameMode _gameMode = null!;
 
     private void ThrowIfDisposed()
@@ -41,6 +42,7 @@ public partial class HanZombiePlagueAPI : IHanZombiePlagueAPI, IDisposable
         IOptionsMonitor<HZPMainCFG> mainCFG, PlayerZombieState zombieState,
         IOptionsMonitor<HZPZombieClassCFG> zombieClassCFG,
         IOptionsMonitor<HZPSpecialClassCFG> specialClassCFG,
+        IOptionsMonitor<HZPHumanClassCFG> humanClassCFG,
         HZPGameMode gameMode)
     {
         _core = core;
@@ -52,6 +54,7 @@ public partial class HanZombiePlagueAPI : IHanZombiePlagueAPI, IDisposable
         _zombieState = zombieState;
         _zombieClassCFG = zombieClassCFG;
         _specialClassCFG = specialClassCFG;
+        _humanClassCFG = humanClassCFG;
         _gameMode = gameMode;
     }
 
@@ -241,10 +244,10 @@ public partial class HanZombiePlagueAPI : IHanZombiePlagueAPI, IDisposable
             maxHealth = CFG.HumanMaxHealth;
         }
 
-        string Default = "characters/models/ctm_st6/ctm_st6_variante.vmdl";
-        string Custom = string.IsNullOrEmpty(CFG.HumandefaultModel) ? Default : CFG.HumandefaultModel;
+        var humanCFG = _humanClassCFG.CurrentValue;
+        string modelPath = _helpers.GetHumanModelPathForPlayer(target, CFG, humanCFG);
 
-        _helpers.TVaccine(target, maxHealth, CFG.HumanInitialSpeed, Custom, CFG.TVaccineSound, 1.0f);
+        _helpers.TVaccine(target, maxHealth, CFG.HumanInitialSpeed, modelPath, CFG.TVaccineSound, 1.0f);
     }
 
     public void HZP_SetTargetSniper(IPlayer target)

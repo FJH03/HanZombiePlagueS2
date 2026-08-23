@@ -107,6 +107,7 @@ public partial class HanZombiePlagueS2(ISwiftlyCore core) : BasePlugin(core)
             ServiceProvider.GetRequiredService<PlayerZombieState>(),
             ServiceProvider.GetRequiredService<IOptionsMonitor<HZPZombieClassCFG>>(),
             ServiceProvider.GetRequiredService<IOptionsMonitor<HZPSpecialClassCFG>>(),
+            ServiceProvider.GetRequiredService<IOptionsMonitor<HZPHumanClassCFG>>(),
             ServiceProvider.GetRequiredService<HZPGameMode>()
         );
 

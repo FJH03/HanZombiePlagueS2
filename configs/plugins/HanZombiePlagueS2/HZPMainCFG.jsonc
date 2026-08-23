@@ -4,13 +4,13 @@
 	"RoundTime": "4.0",
 	"NormalInfection": 
 	{
-		"Enable": true,
+		"Enable": false,
 		"Name": "感染模式",
 		"MotherZombieNames": "魔界妖精",
 		"MotherZombieCount": 1,
 		"Weight": 70,
 		"EnableInfiniteClipMode": false,
-		"ZombieCanReborn": true
+		"ZombieCanReborn": false
 	},
 	"MultiInfection": 
 	{
@@ -24,7 +24,7 @@
 	},
 	"Nemesis": 
 	{
-		"Enable": false,
+		"Enable": true,
 		"Name": "复仇之神模式",
 		"NemesisNames": "胡梦",
 		"Weight": 15,
