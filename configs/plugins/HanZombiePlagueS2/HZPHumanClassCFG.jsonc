@@ -112,7 +112,7 @@
         }
       },
       {
-        "Name": "魔理沙",
+        "Name": "魔理沙1",
         "Enable": true,
         "Stats": {
           "Health": 225,
@@ -126,7 +126,29 @@
           "GlowA": 255
         },
         "Models": {
-          "ModelPath": "characters/models/marisa/miy/miy.vmdl"
+          "ModelPath": "characters/models/marisa/xlt/cloth1_nohitbox.vmdl"
+        },
+        "Weapon": {
+          "PrimaryWeapon": "",
+          "CustomWeaponName": ""
+        }
+      },
+      {
+        "Name": "魔理沙2",
+        "Enable": true,
+        "Stats": {
+          "Health": 225,
+          "Speed": 1.0,
+          "Gravity": 0.8,
+          "Fov": 90,
+          "EnableGlow": false,
+          "GlowR": 0,
+          "GlowG": 0,
+          "GlowB": 0,
+          "GlowA": 255
+        },
+        "Models": {
+          "ModelPath": "characters/models/marisa/xlt/cloth2_nohitbox.vmdl"
         },
         "Weapon": {
           "PrimaryWeapon": "",
